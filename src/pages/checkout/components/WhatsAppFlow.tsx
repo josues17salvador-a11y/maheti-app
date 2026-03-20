@@ -2,8 +2,9 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useCart } from "../../../context/CartContext";
 
+import { Link } from "react-router-dom";
+
 const WHATSAPP_NUMBER = "528331863939";
-const INSTAGRAM_URL = "https://www.instagram.com/maheti_decants?igsh=Y3hwNzBmbTBsOWtoo";
 
 export default function WhatsAppFlow() {
   const { items, totalPrice, totalItems } = useCart();
