@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-black: #050505;
+  --brand-gold: #D4AF37;
+  --brand-gold-muted: #996515;
+  --brand-white: #FFFFFF;
+}
+
+body {
+  background-color: var(--brand-black);
+  color: white;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
+}
+
+/* Elegant Headings */
+h1,
+h2,
+h3,
+h4,
+.font-serif {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.02em;
+}
+
+/* Premium Utility Classes */
+.gold-gradient {
+  background: linear-gradient(135deg, #FFD700 0%, #D4AF37 50%, #B8860B 100%);
+}
+
+.text-gold {
+  color: var(--brand-gold);
+}
+
+.border-gold {
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Hover effects */
+.hover-gold:hover {
+  color: var(--brand-gold);
+  transition: color 0.3s ease;
+}
+
+.product-card-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right,
+      transparent,
+      rgba(255, 255, 255, 0.05),
+      transparent);
+  transition: 0.5s;
+}
+
+.product-card-shimmer:hover::after {
+  left: 100%;
+}
+
+/* Base Utility */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Elegant Text */
+.tracking-luxury {
+  letter-spacing: 0.3em;
+}
+
+.font-light-serif {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+}
