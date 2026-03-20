@@ -1,5 +1,4 @@
-import type { RouteObject } from "react-router-dom";
-import NotFound from "../pages/NotFound";
+import { Navigate, type RouteObject } from "react-router-dom";
 import Home from "../pages/home/page";
 import Products from "../pages/products/page";
 import Checkout from "../pages/checkout/page";
@@ -7,6 +6,6 @@ const routes: RouteObject[] = [
   { path: "/", element: <Home /> },
   { path: "/productos", element: <Products /> },
   { path: "/checkout", element: <Checkout /> },
-  { path: "*", element: <NotFound /> },
+  { path: "*", element: <Navigate to="/" /> },
 ];
 export default routes;
