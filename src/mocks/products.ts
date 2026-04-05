@@ -5,6 +5,9 @@ import khamrahQahwaImg from "../assets/perfumes/khamrah qahwa.png";
 import tommyImg from "../assets/perfumes/tommy.png";
 import versaceErosImg from "../assets/perfumes/versace eros.png";
 import ninePmImg from "../assets/perfumes/9pm.png";
+import jpgParadiseImg from "../assets/perfumes/JPG Paradise garden.png";
+import dylanBlueImg from "../assets/perfumes/Dylan blue.png";
+import jpgLeBeauImg from "../assets/perfumes/JPG Le Beau le parfum.png";
 
 export type Category = "Cítrico" | "Acuático" | "Amaderado" | "Oriental" | "Especia";
 
@@ -93,6 +96,38 @@ export const products: Product[] = [
     category: "Oriental",
     stock: 14,
     image: ninePmImg,
+  },
+  {
+    id: 8,
+    name: "JPG Paradise Garden",
+    price: 160,
+    presentation: "Decant 5ml",
+    description: "Una explosión tropical y exótica con notas verdes y acuáticas.",
+    category: "Acuático",
+    stock: 10,
+    image: jpgParadiseImg,
+    isBestSeller: true,
+  },
+  {
+    id: 9,
+    name: "Dylan Blue (Versace)",
+    price: 110,
+    presentation: "Decant 5ml",
+    description: "Carácter mediterráneo con fuertes notas cítricas y ambroxan.",
+    category: "Acuático",
+    stock: 15,
+    image: dylanBlueImg,
+  },
+  {
+    id: 10,
+    name: "JPG Le Beau Le Parfum",
+    price: 170,
+    presentation: "Decant 5ml",
+    description: "Intensidad adictiva con coco, haba tonka y madera de sándalo.",
+    category: "Amaderado",
+    stock: 8,
+    image: jpgLeBeauImg,
+    isBestSeller: true,
   },
 ];
 
