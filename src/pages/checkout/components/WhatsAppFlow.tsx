@@ -11,20 +11,21 @@ export default function WhatsAppFlow() {
   const [copied, setCopied] = useState(false);
 
   const buildMessage = () => {
-    let message = "✨ *Pedido MAHETI PERFUMES - Alta Perfumería*\n";
-    message += "─────────────────────────\n\n";
-    message += "*Mis decants seleccionados:*\n\n";
+    let message = "*MAHETI PERFUMES - RESUMEN DE PEDIDO*\n";
+    message += "-----------------------------------------\n\n";
+    message += "*PRODUCTOS SELECCIONADOS:*\n\n";
     
     items.forEach((item) => {
-      message += `🖤 *${item.product.name}* (5ml)\n`;
+      message += `*${item.product.name}* (5ml)\n`;
       message += `   Cantidad: ${item.quantity}\n`;
       message += `   Subtotal: $${item.product.price * item.quantity} MXN\n\n`;
     });
     
-    message += "─────────────────────────\n";
-    message += `*Total items:* ${totalItems}\n`;
-    message += `*Total a pagar:* $${totalPrice} MXN\n\n`;
-    message += "💬 *Hola MaHeTi, me gustaría concretar mi pedido para envío.*";
+    message += "-----------------------------------------\n";
+    message += "*RESUMEN FINAL:*\n";
+    message += `Total de productos: ${totalItems}\n`;
+    message += `Total a pagar: $${totalPrice} MXN\n\n`;
+    message += "Hola MaHeTi, me gustaría concretar mi pedido para envío.";
     
     return message;
   };
