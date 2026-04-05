@@ -1,9 +1,9 @@
 import mandarinSkyImg from "../assets/perfumes/mandarin sky.png";
-import nauticaVoyageImg from "../assets/perfumes/nautica vouyague.png";
-import bhararaKingImg from "../assets/perfumes/bharara King.png";
-import khamrahQahwaImg from "../assets/perfumes/khamrah qahwa.png";
+import nauticaVoyageImg from "../assets/perfumes/nautica vouyague .png";
+import bhararaKingImg from "../assets/perfumes/bharara King .png";
+import khamrahQahwaImg from "../assets/perfumes/khamrah qahwa .png";
 import tommyImg from "../assets/perfumes/tommy.png";
-import versaceErosImg from "../assets/perfumes/versace eros.png";
+import versaceErosImg from "../assets/perfumes/versace eros .png";
 import ninePmImg from "../assets/perfumes/9pm.png";
 import jpgParadiseImg from "../assets/perfumes/JPG Paradise garden.png";
 import dylanBlueImg from "../assets/perfumes/Dylan blue.png";
