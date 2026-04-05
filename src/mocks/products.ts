@@ -84,6 +84,37 @@ export const products: Product[] = [
     stock: 14,
     image: "https://static.readdy.ai/image/d3d0b9058c998934a9266190fd0fe716/9062487b69338b73338b387cfb8ff42b.png",
   },
+  {
+    id: 8,
+    name: "Dior Sauvage",
+    price: 150,
+    presentation: "Decant 5ml",
+    description: "Versátil y magnético, con notas de bergamota, pimienta seca y ambroxan.",
+    category: "Cítrico",
+    stock: 25,
+    image: "https://static.readdy.ai/image/d3d0b9058c998934a9266190fd0fe716/93435d77b80bd7f52680d01a059aa0dc.png",
+  },
+  {
+    id: 9,
+    name: "Club de Nuit Intense",
+    price: 80,
+    presentation: "Decant 5ml",
+    description: "Potente y varonil, con una salida deslumbrante de limón y piña ahumada.",
+    category: "Amaderado",
+    stock: 12,
+    image: "https://static.readdy.ai/image/d3d0b9058c998934a9266190fd0fe716/45bfa0ac5873dd522dd42634992e4995.png",
+    isBestSeller: true,
+  },
+  {
+    id: 10,
+    name: "Acqua di Gio Profumo",
+    price: 140,
+    presentation: "Decant 5ml",
+    description: "La frescura inmaculada del mar combinada con incienso y pachulí profundo.",
+    category: "Acuático",
+    stock: 10,
+    image: "https://static.readdy.ai/image/d3d0b9058c998934a9266190fd0fe716/5d2b3cff42f619fa66b4a6d680c78feb.png",
+  },
 ];
 export const bestSellers = products.filter((p) => p.isBestSeller);
 export const categories: Category[] = ["Cítrico", "Acuático", "Amaderado", "Oriental", "Especia"];
