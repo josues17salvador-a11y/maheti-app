@@ -59,11 +59,11 @@ export default function ProductCard({ product }: { product: Product }) {
         </div>
       )}
 
-      <div className="relative aspect-[4/5] overflow-hidden bg-zinc-900">
+      <div className="relative aspect-[4/5] overflow-hidden bg-zinc-900 flex items-center justify-center p-6">
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-full object-cover object-top group-hover:scale-110 transition-all duration-700"
+          className="w-full h-full object-contain group-hover:scale-110 transition-all duration-700"
           style={{ filter: "grayscale(20%)" }}
           onMouseEnter={(e) => { (e.currentTarget as HTMLImageElement).style.filter = "grayscale(0%)"; }}
           onMouseLeave={(e) => { (e.currentTarget as HTMLImageElement).style.filter = "grayscale(20%)"; }}
