@@ -5,7 +5,7 @@ const INSTAGRAM_URL = "https://www.instagram.com/maheti_decants?igsh=Y3hwNzBmbTB
 
 export default function ContactSection() {
   return (
-    <section id="contacto" className="py-24 px-6 bg-black">
+    <section id="contacto" className="py-24 px-6 bg-brand-black">
       <div className="max-w-5xl mx-auto text-center mb-16">
         <motion.p 
           initial={{ opacity: 0, y: 20 }} 
@@ -41,7 +41,7 @@ export default function ContactSection() {
           initial={{ opacity: 0, x: -30 }} 
           whileInView={{ opacity: 1, x: 0 }} 
           viewport={{ once: true }}
-          className="bg-zinc-950/50 border border-white/5 rounded-3xl p-10 text-center flex flex-col items-center group hover:border-green-500/20 transition-all duration-500"
+          className="bg-brand-black border border-white/5 rounded-3xl p-10 text-center flex flex-col items-center group hover:border-green-500/20 transition-all duration-500"
         >
           <div className="w-16 h-16 rounded-full border border-green-500/30 flex items-center justify-center mb-6 bg-green-500/5 group-hover:bg-green-500/10 transition-colors">
             <i className="ri-whatsapp-line text-3xl text-green-500" />
@@ -64,7 +64,7 @@ export default function ContactSection() {
           initial={{ opacity: 0, x: 30 }} 
           whileInView={{ opacity: 1, x: 0 }} 
           viewport={{ once: true }}
-          className="bg-zinc-950/50 border border-white/5 rounded-3xl p-10 text-center flex flex-col items-center group hover:border-pink-500/20 transition-all duration-500"
+          className="bg-brand-black border border-white/5 rounded-3xl p-10 text-center flex flex-col items-center group hover:border-pink-500/20 transition-all duration-500"
         >
           <div className="w-16 h-16 rounded-full border border-pink-500/30 flex items-center justify-center mb-6 bg-pink-500/5 group-hover:bg-pink-500/10 transition-colors">
             <i className="ri-instagram-line text-3xl text-pink-500" />

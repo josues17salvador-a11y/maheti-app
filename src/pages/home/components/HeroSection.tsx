@@ -26,8 +26,8 @@ function GoldenParticles() {
           style={{
             left: `${p.x}%`, top: `${p.y}%`,
             width: p.size, height: p.size,
-            background: `rgba(212, 175, 55, ${p.opacity})`,
-            boxShadow: `0 0 ${p.size * 2}px rgba(212,175,55,${p.opacity * 0.8})`,
+            background: p.id % 2 === 0 ? `rgba(255, 222, 112, ${p.opacity})` : `rgba(163, 196, 235, ${p.opacity})`,
+            boxShadow: `0 0 ${p.size * 2}px ${p.id % 2 === 0 ? `rgba(255,222,112,${p.opacity * 0.8})` : `rgba(163,196,235,${p.opacity * 0.8})`}`,
           }}
           animate={{ y: [0, -30, 0], x: [0, Math.random() * 20 - 10, 0], opacity: [p.opacity, p.opacity * 2, p.opacity], scale: [1, 1.4, 1] }}
           transition={{ duration: p.duration, delay: p.delay, repeat: Infinity, ease: "easeInOut" }}
@@ -42,8 +42,8 @@ export default function HeroSection() {
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <img src="https://static.readdy.ai/image/d3d0b9058c998934a9266190fd0fe716/e8f79b2da385adcdc6cbbbb867bc1baf.png" alt="MAHETI PERFUMES" className="w-full h-full object-cover" style={{ objectPosition: "center 25%" }} />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/40 to-black/85" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-black/65 via-brand-black/40 to-brand-black/85" />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-black/40 via-transparent to-brand-black/40" />
       </div>
       <GoldenParticles />
       <div className="relative z-10 w-full text-center px-6 max-w-5xl mx-auto">

@@ -44,11 +44,11 @@ export default function ProductCard({ product }: { product: Product }) {
       exit={{ opacity: 0, scale: 0.9 }}
       whileHover={{ y: -10 }}
       transition={{ duration: 0.35 }}
-      className="group relative bg-zinc-950 border border-white/5 rounded-xl overflow-hidden hover:border-brand-gold/30 transition-colors duration-500 cursor-pointer"
+      className="group relative bg-brand-black border border-white/5 rounded-xl overflow-hidden hover:border-brand-gold/30 transition-colors duration-500 cursor-pointer"
     >
       <div className="absolute top-4 left-4 z-10 flex gap-2 flex-wrap">
         <span className="bg-brand-gold text-black text-xs font-outfit font-bold px-2.5 py-0.5 rounded-full whitespace-nowrap">5ML</span>
-        <span className="bg-black/60 text-white/60 text-xs font-outfit px-2.5 py-0.5 rounded-full backdrop-blur-sm whitespace-nowrap border border-white/10 uppercase tracking-wider">{product.category}</span>
+        <span className="bg-brand-black/60 text-white/60 text-xs font-outfit px-2.5 py-0.5 rounded-full backdrop-blur-sm whitespace-nowrap border border-white/10 uppercase tracking-wider">{product.category}</span>
       </div>
       
       {product.stock <= 5 && (
@@ -59,7 +59,7 @@ export default function ProductCard({ product }: { product: Product }) {
         </div>
       )}
 
-      <div className="relative aspect-[4/5] overflow-hidden bg-zinc-900 flex items-center justify-center p-6">
+      <div className="relative aspect-[4/5] overflow-hidden bg-brand-black/40 flex items-center justify-center p-6">
         <img
           src={product.image}
           alt={product.name}
@@ -69,13 +69,13 @@ export default function ProductCard({ product }: { product: Product }) {
           onMouseLeave={(e) => { (e.currentTarget as HTMLImageElement).style.filter = "grayscale(20%)"; }}
         />
         <div className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
-          style={{ background: "linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(15,10,5,0.6) 40%, transparent 100%)" }} />
+          style={{ background: "linear-gradient(to top, rgba(23,59,100,0.9) 0%, rgba(23,59,100,0.4) 40%, transparent 100%)" }} />
         
         <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-400 z-10">
           <button
             onClick={handleAdd}
             className="relative w-full py-2.5 font-outfit font-semibold text-sm tracking-widest uppercase rounded-lg transition-all duration-300 cursor-pointer overflow-hidden shadow-2xl"
-            style={{ background: added ? "#22c55e" : "#D4AF37", color: "#000" }}
+            style={{ background: added ? "#22c55e" : "#FFDE70", color: "#000" }}
           >
             <AnimatePresence>
               {shimmerActive && !added && (

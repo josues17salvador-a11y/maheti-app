@@ -4,7 +4,7 @@ const INSTAGRAM_URL = "https://www.instagram.com/maheti_decants?igsh=Y3hwNzBmbTB
 
 export default function Footer() {
   return (
-    <footer className="bg-black border-t border-white/5 pt-20 pb-10 px-6">
+    <footer className="bg-brand-black border-t border-white/5 pt-20 pb-10 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           <div className="col-span-1">

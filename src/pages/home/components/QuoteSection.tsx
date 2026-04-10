@@ -9,7 +9,7 @@ export default function QuoteSection() {
           alt=""
           className="w-full h-full object-cover object-top opacity-30"
         />
-        <div className="absolute inset-0 bg-black/70" />
+        <div className="absolute inset-0 bg-brand-black/70" />
       </div>
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5 }}

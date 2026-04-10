@@ -44,7 +44,7 @@ export default function WhatsAppFlow() {
 
   if (items.length === 0) {
       return (
-          <div className="bg-zinc-950 border border-white/5 rounded-2xl p-12 text-center">
+          <div className="bg-brand-black/40 border border-white/5 rounded-2xl p-12 text-center">
               <i className="ri-shopping-bag-line text-6xl text-white/10 block mb-6" />
               <h2 className="text-white font-serif text-2xl italic mb-4">Tu bolsa está vacía</h2>
               <p className="text-white/40 mb-8 max-w-sm mx-auto">Agrega algunas fragancias a tu bolsa para continuar con tu pedido.</p>
@@ -58,12 +58,12 @@ export default function WhatsAppFlow() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
       <div className="space-y-6">
-        <div className="bg-zinc-950 border border-white/5 rounded-2xl p-8">
+        <div className="bg-brand-black/40 border border-white/5 rounded-2xl p-8">
             <h2 className="text-white font-serif text-2xl italic mb-6">Resumen de Pedido</h2>
             <div className="space-y-6 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
                 {items.map((item) => (
                     <div key={item.product.id} className="flex gap-4">
-                        <div className="w-16 h-20 rounded bg-zinc-900 flex-shrink-0 overflow-hidden">
+                        <div className="w-16 h-20 rounded bg-brand-black/60 flex-shrink-0 overflow-hidden">
                             <img src={item.product.image} alt={item.product.name} className="w-full h-full object-cover" />
                         </div>
                         <div className="flex-1">
@@ -108,7 +108,7 @@ export default function WhatsAppFlow() {
               </p>
 
               <div className="space-y-4">
-                  <button onClick={handleCopy} className="w-full group relative flex items-center justify-between bg-zinc-900 border border-white/10 rounded-lg p-4 hover:border-brand-gold/40 transition-all cursor-pointer">
+                  <button onClick={handleCopy} className="w-full group relative flex items-center justify-between bg-brand-black/40 border border-white/10 rounded-lg p-4 hover:border-brand-gold/40 transition-all cursor-pointer">
                       <div className="flex flex-col items-start">
                           <span className="text-white/40 text-[10px] uppercase tracking-widest mb-1">Paso 1</span>
                           <span className="text-white text-sm font-medium">Copiar detalles del pedido</span>

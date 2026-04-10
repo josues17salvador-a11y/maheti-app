@@ -6,7 +6,7 @@ import { bestSellers } from "../../../mocks/products";
 export default function BestSellers() {
   const { addToCart } = useCart();
   return (
-    <section className="py-24 px-6 bg-black">
+    <section className="py-24 px-6 bg-brand-black">
       <div className="max-w-7xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="text-center mb-16">
           <p className="text-brand-gold font-outfit text-xs tracking-[0.4em] uppercase mb-4">Los más deseados</p>
@@ -16,14 +16,14 @@ export default function BestSellers() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {bestSellers.map((product, index) => (
             <motion.div key={product.id} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="group relative bg-zinc-950 border border-white/5 rounded-xl overflow-hidden hover:border-brand-gold/30 transition-colors duration-500">
+              className="group relative bg-brand-black border border-white/5 rounded-xl overflow-hidden hover:border-brand-gold/30 transition-colors duration-500">
               <div className="absolute top-4 left-4 z-10 flex gap-2">
                 <span className="bg-brand-gold text-black text-xs font-outfit font-semibold px-2 py-0.5 rounded-full">5ML</span>
                 <span className="bg-white/10 text-white/70 text-xs font-outfit px-2 py-0.5 rounded-full backdrop-blur-sm">{product.category}</span>
               </div>
               <div className="relative h-72 overflow-hidden">
                 <img src={product.image} alt={product.name} className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-black/60 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-400">
                   <button onClick={() => addToCart(product)} className="w-full bg-brand-gold text-black py-2.5 font-outfit font-semibold text-sm tracking-widest uppercase rounded-lg hover:bg-brand-gold-light transition-colors cursor-pointer whitespace-nowrap">
                     Añadir a la Bolsa

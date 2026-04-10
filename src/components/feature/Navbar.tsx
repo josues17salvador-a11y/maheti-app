@@ -68,7 +68,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-black/95 backdrop-blur-lg border-b border-brand-gold/20" : "bg-transparent"}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-brand-black/95 backdrop-blur-lg border-b border-brand-gold/20" : "bg-transparent"}`}>
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-3 group">
             <div className="w-11 h-11 rounded-full border-2 border-brand-gold overflow-hidden flex-shrink-0 group-hover:border-brand-gold-light transition-colors duration-300">
@@ -104,7 +104,7 @@ export default function Navbar() {
               <AnimatePresence>
                 {searchOpen && (
                   <motion.div initial={{ opacity: 0, y: -10, scale: 0.95 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: -10, scale: 0.95 }} transition={{ duration: 0.2 }}
-                    className="absolute top-12 right-0 w-80 bg-zinc-900 border border-white/10 rounded-lg overflow-hidden z-50 shadow-2xl">
+                    className="absolute top-12 right-0 w-80 bg-brand-black/95 border border-white/10 rounded-lg overflow-hidden z-50 shadow-2xl">
                     <div className="flex items-center gap-3 px-4 py-3 border-b border-white/10">
                       <i className="ri-search-line text-brand-gold" />
                       <input autoFocus type="text" placeholder="Buscar fragancias..." value={searchQuery}
@@ -116,7 +116,7 @@ export default function Navbar() {
                         {filteredProducts.map((p) => (
                           <Link key={p.id} to="/productos" onClick={() => { setSearchOpen(false); setSearchQuery(""); }}
                             className="w-full flex items-center gap-3 px-4 py-3 hover:bg-white/5 transition-colors cursor-pointer text-left">
-                            <div className="w-10 h-10 rounded overflow-hidden flex-shrink-0 bg-zinc-800">
+                            <div className="w-10 h-10 rounded overflow-hidden flex-shrink-0 bg-brand-black/40">
                               <img src={p.image} alt={p.name} className="w-full h-full object-cover" />
                             </div>
                             <div>
@@ -155,7 +155,7 @@ export default function Navbar() {
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setCartOpen(false)}
                     className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[60]" />
                 <motion.div initial={{ x: "100%" }} animate={{ x: 0 }} exit={{ x: "100%" }} transition={{ type: "tween", duration: 0.4 }}
-                    className="fixed top-0 right-0 bottom-0 w-full max-w-md bg-zinc-950 z-[70] shadow-2xl flex flex-col">
+                    className="fixed top-0 right-0 bottom-0 w-full max-w-md bg-brand-black z-[70] shadow-2xl flex flex-col">
                     <div className="p-6 border-b border-white/10 flex items-center justify-between">
                         <h2 className="text-white font-serif text-2xl italic">Mi Bolsa <span className="text-brand-gold text-sm not-italic ml-2">({totalItems})</span></h2>
                         <button onClick={() => setCartOpen(false)} className="text-white/50 hover:text-brand-gold transition-colors cursor-pointer">
@@ -172,7 +172,7 @@ export default function Navbar() {
                         ) : (
                             items.map((item) => (
                                 <div key={item.product.id} className="flex gap-4 group">
-                                    <div className="w-20 h-24 rounded bg-zinc-900 overflow-hidden flex-shrink-0">
+                                    <div className="w-20 h-24 rounded bg-brand-black/40 overflow-hidden flex-shrink-0">
                                         <img src={item.product.image} alt={item.product.name} className="w-full h-full object-cover" />
                                     </div>
                                     <div className="flex-1">
@@ -217,7 +217,7 @@ export default function Navbar() {
       <AnimatePresence>
           {mobileOpen && (
               <motion.div initial={{ x: "-100%" }} animate={{ x: 0 }} exit={{ x: "-100%" }} transition={{ type: "tween", duration: 0.4 }}
-                className="fixed inset-0 bg-black z-40 md:hidden flex flex-col p-10 pt-32">
+                className="fixed inset-0 bg-brand-black z-40 md:hidden flex flex-col p-10 pt-32">
                   <div className="flex flex-col gap-8">
                       {navLinks.map((link) => (
                            link.label === "Contacto" ? (

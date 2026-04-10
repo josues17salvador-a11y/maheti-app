@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --brand-black: #050505;
-  --brand-gold: #D4AF37;
-  --brand-gold-muted: #996515;
-  --brand-white: #FFFFFF;
+  --brand-black: #173B64;
+  --brand-gold: #FFDE70;
+  --brand-gold-muted: #A3C4EB;
+  --brand-white: #F6FAFF;
 }
 
 body {
@@ -29,7 +29,7 @@ h4,
 
 /* Premium Utility Classes */
 .gold-gradient {
-  background: linear-gradient(135deg, #FFD700 0%, #D4AF37 50%, #B8860B 100%);
+  background: linear-gradient(135deg, #FFDE70 0%, #A3C4EB 50%, #173B64 100%);
 }
 
 .text-gold {

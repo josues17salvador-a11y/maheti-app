@@ -21,7 +21,7 @@ export default function ProductFilters({ search, onSearchChange, activeCategory,
           placeholder="Buscar por nombre o categoría..." 
           value={search} 
           onChange={(e) => onSearchChange(e.target.value)}
-          className="w-full bg-zinc-950 border border-white/10 rounded-lg pl-11 pr-4 py-3 text-white text-sm font-outfit outline-none focus:border-brand-gold/50 placeholder-white/25 transition-colors" 
+          className="w-full bg-brand-black/40 border border-white/10 rounded-lg pl-11 pr-4 py-3 text-white text-sm font-outfit outline-none focus:border-brand-gold/50 placeholder-white/25 transition-colors" 
         />
         {search && (
           <button onClick={() => onSearchChange("")} className="absolute right-4 top-1/2 -translate-y-1/2 text-white/30 hover:text-white cursor-pointer">

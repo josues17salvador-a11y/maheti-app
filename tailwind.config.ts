@@ -3,10 +3,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        "brand-black": "#000000",
-        "brand-gold": "#D4AF37",
-        "brand-gold-light": "#E8C94A",
-        "brand-gold-dark": "#B8941F",
+        "brand-black": "#173B64",
+        "brand-gold": "#FFDE70",
+        "brand-gold-light": "#F6FAFF",
+        "brand-gold-dark": "#A3C4EB",
       },
       fontFamily: {
         serif: ["Playfair Display", "Georgia", "serif"],
@@ -14,7 +14,7 @@ export default {
         outfit: ["Outfit", "sans-serif"],
       },
       backgroundImage: {
-        "gold-gradient": "linear-gradient(135deg, #D4AF37 0%, #E8C94A 50%, #B8941F 100%)",
+        "gold-gradient": "linear-gradient(135deg, #FFDE70 0%, #A3C4EB 50%, #173B64 100%)",
       },
       animation: {
         "fade-in": "fadeIn 0.6s ease-out",

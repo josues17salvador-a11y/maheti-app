@@ -23,12 +23,12 @@ export default function ProductsPage() {
   }, [search, activeCategory]);
 
   return (
-    <main className="bg-black min-h-screen">
+    <main className="bg-brand-black min-h-screen">
       <Navbar />
       <section className="relative pt-36 pb-16 px-6 overflow-hidden">
         <div className="absolute inset-0">
           <img src="https://readdy.ai/api/search-image?query=dark luxury background abstract minimal perfume bottles silhouette atmospheric moody black deep shadows editorial&width=1920&height=600&seq=maheti_cat_header&orientation=landscape" alt="" className="w-full h-full object-cover object-top opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black" />
+          <div className="absolute inset-0 bg-gradient-to-b from-brand-black/80 via-brand-black/60 to-brand-black" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto">
           <p className="text-brand-gold font-outfit text-xs tracking-[0.4em] uppercase mb-3">MAHETI · Fragancias</p>
