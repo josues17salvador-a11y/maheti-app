@@ -44,7 +44,7 @@ export default function ProductCard({ product }: { product: Product }) {
       exit={{ opacity: 0, scale: 0.9 }}
       whileHover={{ y: -10 }}
       transition={{ duration: 0.35 }}
-      className="group relative bg-white border border-brand-black/5 shadow-sm rounded-xl overflow-hidden hover:border-brand-gold/50 shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer"
+      className="group relative bg-white border border-brand-black/5 premium-shadow premium-shadow-hover rounded-xl overflow-hidden transition-all duration-500 cursor-pointer"
     >
       <div className="absolute top-4 left-4 z-10 flex gap-2 flex-wrap">
         <span className="bg-brand-gold text-brand-black text-xs font-outfit font-bold px-2.5 py-0.5 rounded-full whitespace-nowrap">5ML</span>
@@ -74,8 +74,8 @@ export default function ProductCard({ product }: { product: Product }) {
         <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-400 z-10">
           <button
             onClick={handleAdd}
-            className="relative w-full py-2.5 font-outfit font-semibold text-sm tracking-widest uppercase rounded-lg transition-all duration-300 cursor-pointer overflow-hidden shadow-2xl"
-            style={{ background: added ? "#22c55e" : "#173B64", color: "#fff" }}
+            className={`relative w-full py-2.5 font-outfit font-semibold text-sm tracking-widest uppercase rounded-lg transition-all duration-500 cursor-pointer overflow-hidden shadow-lg ${!added && 'gold-sheen'}`}
+            style={{ background: added ? "#22c55e" : "", color: added ? "#fff" : "#173B64" }}
           >
             <AnimatePresence>
               {shimmerActive && !added && (
@@ -114,7 +114,7 @@ export default function ProductCard({ product }: { product: Product }) {
         <h3 className="font-serif text-brand-black group-hover:text-brand-gold-dark text-xl italic mb-1.5 leading-snug transition-colors duration-300">
           {product.name}
         </h3>
-        <p className="text-brand-black/40 font-outfit text-sm leading-relaxed mb-4 line-clamp-2">{product.description}</p>
+        <p className="text-brand-black/50 font-outfit text-sm leading-relaxed mb-4 line-clamp-2">{product.description}</p>
         <div className="flex items-center justify-between">
           <div>
             <span className="text-brand-black font-serif text-xl font-semibold">${product.price}</span>

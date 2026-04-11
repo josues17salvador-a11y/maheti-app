@@ -21,7 +21,7 @@ export default function ContactSection() {
           whileInView={{ opacity: 1, y: 0 }} 
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="font-serif text-white text-4xl sm:text-5xl italic mb-6"
+          className="font-serif text-brand-gold text-4xl sm:text-5xl italic mb-6 drop-shadow-sm"
         >
           Contáctanos
         </motion.h2>

@@ -17,7 +17,7 @@ export default function BestSellers() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {bestSellers.map((product, index) => (
             <motion.div key={product.id} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="group relative bg-white border border-brand-black/5 rounded-xl overflow-hidden hover:border-brand-gold/50 shadow-sm hover:shadow-xl transition-all duration-500">
+              className="group relative bg-white border border-brand-black/5 premium-shadow premium-shadow-hover rounded-xl overflow-hidden transition-all duration-500">
               <div className="absolute top-4 left-4 z-10 flex gap-2">
                 <span className="bg-brand-gold text-brand-black text-xs font-outfit font-semibold px-2 py-0.5 rounded-full">5ML</span>
                 <span className="bg-brand-black/5 text-brand-black/60 text-xs font-outfit px-2 py-0.5 rounded-full backdrop-blur-sm">{product.category}</span>

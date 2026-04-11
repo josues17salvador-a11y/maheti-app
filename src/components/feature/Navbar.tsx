@@ -68,7 +68,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-brand-bg/95 backdrop-blur-lg border-b border-brand-black/10" : "bg-transparent"}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "glass-morphism" : "bg-transparent h-24"}`}>
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-3 group">
             <div className="w-11 h-11 rounded-full border-2 border-brand-gold overflow-hidden flex-shrink-0 group-hover:border-brand-gold-light transition-colors duration-300">
@@ -83,7 +83,7 @@ export default function Navbar() {
             {navLinks.map((link) =>
               link.label === "Contacto" ? (
                 <a key={link.to} href="/#contacto" onClick={handleContactClick}
-                  className="font-outfit text-sm tracking-widest uppercase transition-colors duration-300 text-white/70 hover:text-brand-gold cursor-pointer">
+                  className="font-outfit text-sm tracking-widest uppercase transition-colors duration-300 text-brand-black/70 hover:text-brand-gold cursor-pointer">
                   {link.label}
                 </a>
               ) : (
@@ -104,8 +104,8 @@ export default function Navbar() {
               <AnimatePresence>
                 {searchOpen && (
                   <motion.div initial={{ opacity: 0, y: -10, scale: 0.95 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: -10, scale: 0.95 }} transition={{ duration: 0.2 }}
-                    className="absolute top-12 right-0 w-80 bg-brand-black/95 border border-white/10 rounded-lg overflow-hidden z-50 shadow-2xl">
-                    <div className="flex items-center gap-3 px-4 py-3 border-b border-white/10">
+                    className="absolute top-12 right-0 w-80 glass-morphism rounded-xl overflow-hidden z-50 premium-shadow">
+                    <div className="flex items-center gap-3 px-4 py-3 border-b border-brand-black/5">
                       <i className="ri-search-line text-brand-gold" />
                       <input autoFocus type="text" placeholder="Buscar fragancias..." value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
@@ -115,8 +115,8 @@ export default function Navbar() {
                       <div className="max-h-72 overflow-y-auto">
                         {filteredProducts.map((p) => (
                           <Link key={p.id} to="/productos" onClick={() => { setSearchOpen(false); setSearchQuery(""); }}
-                            className="w-full flex items-center gap-3 px-4 py-3 hover:bg-white/5 transition-colors cursor-pointer text-left">
-                            <div className="w-10 h-10 rounded overflow-hidden flex-shrink-0 bg-brand-black/40">
+                            className="w-full flex items-center gap-3 px-4 py-3 hover:bg-brand-black/5 transition-colors cursor-pointer text-left">
+                            <div className="w-10 h-10 rounded overflow-hidden flex-shrink-0 bg-brand-bg">
                               <img src={p.image} alt={p.name} className="w-full h-full object-cover" />
                             </div>
                             <div>
