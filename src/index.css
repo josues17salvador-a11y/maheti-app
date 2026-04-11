@@ -6,13 +6,14 @@
   --brand-black: #173B64;
   --brand-gold: #FFDE70;
   --brand-gold-muted: #A3C4EB;
-  --brand-bg: #F6FAFF;
+  --brand-bg: #173B64;
+  --brand-text: #F6FAFF;
   --brand-white: #FFFFFF;
 }
 
 body {
   background-color: var(--brand-bg);
-  color: var(--brand-black);
+  color: var(--brand-text);
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   letter-spacing: -0.01em;
@@ -42,19 +43,19 @@ h4,
 }
 
 .glass-morphism {
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(23, 59, 100, 0.05);
-  box-shadow: 0 8px 32px 0 rgba(23, 59, 100, 0.03);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 222, 112, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
 }
 
 .premium-shadow {
-  box-shadow: 0 20px 40px -15px rgba(23, 59, 100, 0.08);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.4);
 }
 
 .premium-shadow-hover:hover {
-  box-shadow: 0 30px 60px -12px rgba(23, 59, 100, 0.12);
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 222, 112, 0.05);
 }
 
 .gold-sheen {

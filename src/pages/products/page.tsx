@@ -32,9 +32,9 @@ export default function ProductsPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-brand-bg/60 via-transparent to-brand-bg" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto">
-          <p className="text-brand-gold-dark font-outfit text-xs tracking-[0.4em] uppercase mb-3">MAHETI · Fragancias</p>
-          <h1 className="font-serif text-brand-black text-4xl sm:text-5xl italic mb-4">Catálogo Completo</h1>
-          <p className="text-brand-black/40 font-outfit text-sm max-w-md">Todos nuestros decants de 5ml, listos para descubrir. Prueba antes de invertir.</p>
+          <p className="text-brand-gold font-outfit text-xs tracking-[0.4em] uppercase mb-3">MAHETI · Fragancias</p>
+          <h1 className="font-serif text-white text-4xl sm:text-5xl italic mb-4">Catálogo Completo</h1>
+          <p className="text-white/40 font-outfit text-sm max-w-md">Todos nuestros decants de 5ml, listos para descubrir. Prueba antes de invertir.</p>
         </div>
       </section>
 
@@ -43,7 +43,7 @@ export default function ProductsPage() {
           <ProductFilters search={search} onSearchChange={setSearch} activeCategory={activeCategory} onCategoryChange={setActiveCategory} />
           
           <div className="flex items-center justify-between mb-8">
-            <p className="text-brand-black/30 font-outfit text-sm">{filtered.length} {filtered.length === 1 ? "fragancia" : "fragancias"} encontradas</p>
+            <p className="text-white/30 font-outfit text-sm">{filtered.length} {filtered.length === 1 ? "fragancia" : "fragancias"} encontradas</p>
             {(search || activeCategory !== "Todos") && (
               <button onClick={() => { setSearch(""); setActiveCategory("Todos"); }} className="text-brand-gold/60 hover:text-brand-gold font-outfit text-xs flex items-center gap-1.5 cursor-pointer transition-colors">
                 <i className="ri-refresh-line" /> Limpiar filtros
@@ -62,9 +62,9 @@ export default function ProductsPage() {
               </motion.div>
             ) : (
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center py-24">
-                <i className="ri-search-line text-5xl text-brand-black/10 block mb-4" />
-                <p className="text-brand-black/30 font-outfit">No encontramos esa fragancia</p>
-                <button onClick={() => { setSearch(""); setActiveCategory("Todos"); }} className="mt-4 text-brand-black/60 hover:text-brand-black font-outfit text-sm hover:underline cursor-pointer">Ver todos los productos</button>
+                <i className="ri-search-line text-5xl text-white/10 block mb-4" />
+                <p className="text-white/30 font-outfit">No encontramos esa fragancia</p>
+                <button onClick={() => { setSearch(""); setActiveCategory("Todos"); }} className="mt-4 text-white/60 hover:text-white font-outfit text-sm hover:underline cursor-pointer">Ver todos los productos</button>
               </motion.div>
             )}
           </AnimatePresence>

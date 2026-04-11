@@ -21,10 +21,10 @@ export default function ProductFilters({ search, onSearchChange, activeCategory,
           placeholder="Buscar por nombre o categoría..." 
           value={search} 
           onChange={(e) => onSearchChange(e.target.value)}
-          className="w-full bg-white border border-brand-black/10 rounded-lg pl-11 pr-4 py-3 text-brand-black text-sm font-outfit outline-none focus:border-brand-black/30 placeholder-brand-black/25 transition-all shadow-sm focus:shadow-md" 
+          className="w-full glass-morphism rounded-xl pl-11 pr-4 py-3 text-white text-sm font-outfit outline-none focus:border-brand-gold/30 placeholder-white/25 transition-all shadow-sm focus:shadow-md" 
         />
         {search && (
-          <button onClick={() => onSearchChange("")} className="absolute right-4 top-1/2 -translate-y-1/2 text-brand-black/30 hover:text-brand-black cursor-pointer">
+          <button onClick={() => onSearchChange("")} className="absolute right-4 top-1/2 -translate-y-1/2 text-white/30 hover:text-white cursor-pointer">
             <i className="ri-close-line text-base" />
           </button>
         )}
@@ -35,13 +35,13 @@ export default function ProductFilters({ search, onSearchChange, activeCategory,
           <button 
             key={cat} 
             onClick={() => onCategoryChange(cat)}
-            className={`relative px-5 py-2.5 font-outfit text-xs tracking-[0.3em] uppercase transition-all duration-300 cursor-pointer whitespace-nowrap ${activeCategory === cat ? "text-brand-black font-bold" : "text-brand-black/40 hover:text-brand-black"}`}
+            className={`relative px-5 py-2.5 font-outfit text-xs tracking-[0.3em] uppercase transition-all duration-300 cursor-pointer whitespace-nowrap ${activeCategory === cat ? "text-brand-gold font-bold" : "text-white/40 hover:text-white"}`}
           >
             {cat}
             {activeCategory === cat && (
               <motion.span 
                 layoutId="category-underline" 
-                className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-black" 
+                className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-gold" 
                 transition={{ type: "spring", stiffness: 400, damping: 30 }} 
               />
             )}

@@ -7,7 +7,7 @@ export default {
         "brand-gold": "#FFDE70",
         "brand-gold-light": "#A3C4EB",
         "brand-gold-dark": "#0d223a",
-        "brand-bg": "#F6FAFF",
+        "brand-bg": "#173B64",
       },
       fontFamily: {
         serif: ["Playfair Display", "Georgia", "serif"],

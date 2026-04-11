@@ -44,10 +44,10 @@ export default function WhatsAppFlow() {
 
   if (items.length === 0) {
       return (
-          <div className="bg-white border border-brand-black/5 shadow-sm rounded-2xl p-12 text-center">
-              <i className="ri-shopping-bag-line text-6xl text-brand-black/10 block mb-6" />
-              <h2 className="text-brand-black font-serif text-2xl italic mb-4">Tu bolsa está vacía</h2>
-              <p className="text-brand-black/40 mb-8 max-w-sm mx-auto">Agrega algunas fragancias a tu bolsa para continuar con tu pedido.</p>
+          <div className="glass-morphism rounded-2xl p-12 text-center">
+              <i className="ri-shopping-bag-line text-6xl text-white/10 block mb-6" />
+              <h2 className="text-white font-serif text-2xl italic mb-4">Tu bolsa está vacía</h2>
+              <p className="text-white/40 mb-8 max-w-sm mx-auto">Agrega algunas fragancias a tu bolsa para continuar con tu pedido.</p>
               <Link to="/productos" className="inline-block bg-brand-black text-white px-10 py-4 font-outfit font-bold uppercase tracking-widest text-sm rounded hover:bg-brand-black/90 transition-all">
                   Ver Productos
               </Link>
@@ -58,8 +58,8 @@ export default function WhatsAppFlow() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
       <div className="space-y-6">
-        <div className="bg-white border border-brand-black/5 shadow-sm rounded-2xl p-8">
-            <h2 className="text-brand-black font-serif text-2xl italic mb-6">Resumen de Pedido</h2>
+        <div className="glass-morphism rounded-2xl p-8">
+            <h2 className="text-white font-serif text-2xl italic mb-6">Resumen de Pedido</h2>
             <div className="space-y-6 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
                 {items.map((item) => (
                     <div key={item.product.id} className="flex gap-4">
@@ -67,51 +67,51 @@ export default function WhatsAppFlow() {
                             <img src={item.product.image} alt={item.product.name} className="w-full h-full object-cover" />
                         </div>
                         <div className="flex-1">
-                            <h3 className="text-brand-black text-base font-serif italic">{item.product.name}</h3>
-                            <p className="text-brand-black/30 text-[10px] uppercase tracking-widest mb-2">Decant 5ml</p>
+                            <h3 className="text-white text-base font-serif italic">{item.product.name}</h3>
+                            <p className="text-white/30 text-[10px] uppercase tracking-widest mb-2">Decant 5ml</p>
                             <div className="flex items-center justify-between">
-                                <span className="text-brand-black/40 text-xs">{item.quantity} x ${item.product.price}</span>
-                                <span className="text-brand-black font-semibold">${item.product.price * item.quantity}</span>
+                                <span className="text-white/40 text-xs">{item.quantity} x ${item.product.price}</span>
+                                <span className="text-white font-semibold">${item.product.price * item.quantity}</span>
                             </div>
                         </div>
                     </div>
                 ))}
             </div>
             
-            <div className="mt-8 pt-8 border-t border-brand-black/5 space-y-4">
-                <div className="flex justify-between text-brand-black/40 text-sm">
+            <div className="mt-8 pt-8 border-t border-white/10 space-y-4">
+                <div className="flex justify-between text-white/40 text-sm">
                     <span>Subtotal ({totalItems} productos)</span>
-                    <span className="text-brand-black">${totalPrice}</span>
+                    <span className="text-white">${totalPrice}</span>
                 </div>
-                <div className="flex justify-between text-brand-black/40 text-sm">
+                <div className="flex justify-between text-white/40 text-sm">
                     <span>Envío</span>
-                    <span className="text-blue-600 font-bold uppercase text-[10px] tracking-tighter">Por acordar en chat</span>
+                    <span className="text-brand-gold font-bold uppercase text-[10px] tracking-widest">Por acordar en chat</span>
                 </div>
                 <div className="flex justify-between items-end pt-2">
-                    <span className="text-brand-black font-serif text-xl italic leading-none">Total</span>
-                    <span className="text-brand-black font-serif text-3xl font-bold leading-none">${totalPrice} <span className="text-xs font-outfit font-normal">MXN</span></span>
+                    <span className="text-white font-serif text-xl italic leading-none">Total</span>
+                    <span className="text-white font-serif text-3xl font-bold leading-none">${totalPrice} <span className="text-xs font-outfit font-normal">MXN</span></span>
                 </div>
             </div>
         </div>
       </div>
 
       <div className="space-y-6">
-          <div className="bg-brand-black/5 border border-brand-black/10 rounded-2xl p-8">
+          <div className="glass-morphism rounded-2xl p-8">
               <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-brand-black flex items-center justify-center text-white">
+                  <div className="w-10 h-10 rounded-full bg-brand-gold flex items-center justify-center text-black">
                       <i className="ri-whatsapp-line text-2xl" />
                   </div>
-                  <h3 className="text-brand-black font-serif text-xl italic underline decoration-brand-black/10">Finalizar por WhatsApp</h3>
+                  <h3 className="text-white font-serif text-xl italic underline decoration-white/10">Finalizar por WhatsApp</h3>
               </div>
-              <p className="text-brand-black/60 text-sm leading-relaxed mb-8">
+              <p className="text-white/60 text-sm leading-relaxed mb-8">
                   Al ser decants exclusivos, coordinamos el envío y pago directamente contigo para garantizar la mejor atención.
               </p>
 
               <div className="space-y-4">
-                  <button onClick={handleCopy} className="w-full group relative flex items-center justify-between bg-white border border-brand-black/10 rounded-lg p-4 hover:border-brand-black/30 transition-all cursor-pointer">
+                  <button onClick={handleCopy} className="w-full group relative flex items-center justify-between bg-white/5 border border-white/10 rounded-lg p-4 hover:border-brand-gold/30 transition-all cursor-pointer">
                       <div className="flex flex-col items-start">
-                          <span className="text-brand-black/40 text-[10px] uppercase tracking-widest mb-1">Paso 1</span>
-                          <span className="text-brand-black text-sm font-medium">Copiar detalles del pedido</span>
+                          <span className="text-white/40 text-[10px] uppercase tracking-widest mb-1">Paso 1</span>
+                          <span className="text-white text-sm font-medium">Copiar detalles del pedido</span>
                       </div>
                       <div className="flex items-center gap-2">
                           <AnimatePresence>

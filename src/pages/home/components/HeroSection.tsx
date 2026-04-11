@@ -42,8 +42,8 @@ export default function HeroSection() {
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <img src="https://static.readdy.ai/image/d3d0b9058c998934a9266190fd0fe716/e8f79b2da385adcdc6cbbbb867bc1baf.png" alt="MAHETI PERFUMES" className="w-full h-full object-cover" style={{ objectPosition: "center 25%" }} />
-        <div className="absolute inset-0 bg-brand-bg/40 backdrop-blur-[1px]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-bg/60 via-transparent to-brand-bg" />
+        <div className="absolute inset-0 bg-brand-bg/20 backdrop-blur-[1px]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-bg/80 via-transparent to-brand-bg" />
       </div>
       <GoldenParticles />
       <div className="relative z-10 w-full text-center px-6 max-w-5xl mx-auto">
@@ -52,21 +52,21 @@ export default function HeroSection() {
           Alta Perfumería · Decants 5ml
         </motion.p>
         <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.4 }}
-          className="font-serif text-brand-black text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight italic mb-8">
+          className="font-serif text-white text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight italic mb-8">
           Pequeño Perfume,<br />
           <motion.span initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.65 }} className="text-brand-gold not-italic">
             Gran Olor.
           </motion.span>
         </motion.h1>
         <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.8 }}
-          className="text-brand-black/70 font-outfit text-base sm:text-lg max-w-xl mx-auto mb-10 leading-relaxed">
+          className="text-white/70 font-outfit text-base sm:text-lg max-w-xl mx-auto mb-10 leading-relaxed">
           Prueba las fragancias de lujo más icónicas del mundo antes de invertir en el frasco completo.
-          <span className="text-brand-black/40 italic"> 5ml. La esencia del lujo.</span>
+          <span className="text-white/40 italic"> 5ml. La esencia del lujo.</span>
         </motion.p>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.95 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link to="/productos" className="relative group overflow-hidden px-10 py-4 border border-brand-black text-brand-black font-outfit font-medium text-sm tracking-widest uppercase rounded-sm transition-colors duration-300 hover:text-white whitespace-nowrap cursor-pointer">
-            <span className="absolute inset-0 bg-brand-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out" />
+          <Link to="/productos" className="relative group overflow-hidden px-10 py-4 border border-brand-gold text-brand-gold font-outfit font-medium text-sm tracking-widest uppercase rounded-sm transition-colors duration-300 hover:text-black whitespace-nowrap cursor-pointer">
+            <span className="absolute inset-0 bg-brand-gold transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out" />
             <span className="relative">Explorar Catálogo</span>
           </Link>
           <Link to="/checkout" className="relative group overflow-hidden px-10 py-4 bg-brand-gold text-black font-outfit font-semibold text-sm tracking-widest uppercase rounded-sm hover:bg-brand-gold-light transition-colors duration-300 whitespace-nowrap cursor-pointer">
