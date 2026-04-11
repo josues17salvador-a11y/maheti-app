@@ -63,6 +63,7 @@ export default function ProductCard({ product }: { product: Product }) {
         <img
           src={product.image}
           alt={product.name}
+          loading="lazy"
           className="w-full h-full object-contain group-hover:scale-110 transition-all duration-700"
           style={{ filter: "grayscale(20%)" }}
           onMouseEnter={(e) => { (e.currentTarget as HTMLImageElement).style.filter = "grayscale(0%)"; }}

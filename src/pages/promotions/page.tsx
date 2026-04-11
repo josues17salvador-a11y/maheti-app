@@ -48,6 +48,7 @@ export default function PromotionsPage() {
                       <img 
                         src={promo.image} 
                         alt={promo.name} 
+                        loading="lazy"
                         className="w-full h-full object-contain p-4"
                       />
                     </div>

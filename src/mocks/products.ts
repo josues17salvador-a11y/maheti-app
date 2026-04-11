@@ -1,6 +1,6 @@
 import mandarinSkyImg from "../assets/perfumes/mandarin sky.png";
 import nauticaVoyageImg from "../assets/perfumes/nautica vouyague .png";
-import bhararaKingImg from "../assets/perfumes/bharara King .png";
+import bhararaKingImg from "../assets/perfumes/bhara king.png";
 import khamrahQahwaImg from "../assets/perfumes/khamrah qahwa .png";
 import tommyImg from "../assets/perfumes/tommy.png";
 import versaceErosImg from "../assets/perfumes/versace eros .png";
