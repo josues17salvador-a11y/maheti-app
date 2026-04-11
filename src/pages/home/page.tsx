@@ -2,6 +2,7 @@ import Navbar from "../../components/feature/Navbar";
 import Footer from "../../components/feature/Footer";
 import HeroSection from "./components/HeroSection";
 import BestSellers from "./components/BestSellers";
+import ExclusivePromo from "./components/ExclusivePromo";
 import QuoteSection from "./components/QuoteSection";
 import ContactSection from "./components/ContactSection";
 
@@ -11,6 +12,7 @@ export default function HomePage() {
       <Navbar />
       <HeroSection />
       <BestSellers />
+      <ExclusivePromo />
       <QuoteSection />
       <ContactSection />
       <Footer />
