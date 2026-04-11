@@ -44,11 +44,11 @@ export default function ProductCard({ product }: { product: Product }) {
       exit={{ opacity: 0, scale: 0.9 }}
       whileHover={{ y: -10 }}
       transition={{ duration: 0.35 }}
-      className="group relative bg-brand-black border border-white/5 rounded-xl overflow-hidden hover:border-brand-gold/30 transition-colors duration-500 cursor-pointer"
+      className="group relative bg-white border border-brand-black/5 shadow-sm rounded-xl overflow-hidden hover:border-brand-gold/50 shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer"
     >
       <div className="absolute top-4 left-4 z-10 flex gap-2 flex-wrap">
-        <span className="bg-brand-gold text-black text-xs font-outfit font-bold px-2.5 py-0.5 rounded-full whitespace-nowrap">5ML</span>
-        <span className="bg-brand-black/60 text-white/60 text-xs font-outfit px-2.5 py-0.5 rounded-full backdrop-blur-sm whitespace-nowrap border border-white/10 uppercase tracking-wider">{product.category}</span>
+        <span className="bg-brand-gold text-brand-black text-xs font-outfit font-bold px-2.5 py-0.5 rounded-full whitespace-nowrap">5ML</span>
+        <span className="bg-brand-bg/80 text-brand-black/60 text-xs font-outfit px-2.5 py-0.5 rounded-full backdrop-blur-sm whitespace-nowrap border border-brand-black/5 uppercase tracking-wider">{product.category}</span>
       </div>
       
       {product.stock <= 5 && (
@@ -59,7 +59,7 @@ export default function ProductCard({ product }: { product: Product }) {
         </div>
       )}
 
-      <div className="relative aspect-[4/5] overflow-hidden bg-brand-black/40 flex items-center justify-center p-6">
+      <div className="relative aspect-[4/5] overflow-hidden bg-brand-bg flex items-center justify-center p-6">
         <img
           src={product.image}
           alt={product.name}
@@ -69,13 +69,13 @@ export default function ProductCard({ product }: { product: Product }) {
           onMouseLeave={(e) => { (e.currentTarget as HTMLImageElement).style.filter = "grayscale(20%)"; }}
         />
         <div className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
-          style={{ background: "linear-gradient(to top, rgba(23,59,100,0.9) 0%, rgba(23,59,100,0.4) 40%, transparent 100%)" }} />
+          style={{ background: "linear-gradient(to top, rgba(246,250,255,0.9) 0%, rgba(246,250,255,0.4) 40%, transparent 100%)" }} />
         
         <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-400 z-10">
           <button
             onClick={handleAdd}
             className="relative w-full py-2.5 font-outfit font-semibold text-sm tracking-widest uppercase rounded-lg transition-all duration-300 cursor-pointer overflow-hidden shadow-2xl"
-            style={{ background: added ? "#22c55e" : "#FFDE70", color: "#000" }}
+            style={{ background: added ? "#22c55e" : "#173B64", color: "#fff" }}
           >
             <AnimatePresence>
               {shimmerActive && !added && (
@@ -111,14 +111,14 @@ export default function ProductCard({ product }: { product: Product }) {
       </div>
 
       <div className="p-5">
-        <h3 className="font-serif text-white group-hover:text-brand-gold text-xl italic mb-1.5 leading-snug transition-colors duration-300">
+        <h3 className="font-serif text-brand-black group-hover:text-brand-gold-dark text-xl italic mb-1.5 leading-snug transition-colors duration-300">
           {product.name}
         </h3>
-        <p className="text-white/40 font-outfit text-sm leading-relaxed mb-4 line-clamp-2">{product.description}</p>
+        <p className="text-brand-black/40 font-outfit text-sm leading-relaxed mb-4 line-clamp-2">{product.description}</p>
         <div className="flex items-center justify-between">
           <div>
-            <span className="text-brand-gold font-serif text-xl font-semibold">${product.price}</span>
-            <span className="text-brand-gold/50 font-outfit text-xs ml-1">MXN</span>
+            <span className="text-brand-black font-serif text-xl font-semibold">${product.price}</span>
+            <span className="text-brand-black/40 font-outfit text-xs ml-1">MXN</span>
           </div>
           {inCart && (
             <span className="text-brand-gold/60 font-outfit text-xs bg-brand-gold/10 px-2 py-1 rounded-full border border-brand-gold/20">

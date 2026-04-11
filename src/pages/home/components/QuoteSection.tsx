@@ -9,7 +9,7 @@ export default function QuoteSection() {
           alt=""
           className="w-full h-full object-cover object-top opacity-30"
         />
-        <div className="absolute inset-0 bg-brand-black/70" />
+        <div className="absolute inset-0 bg-brand-bg/90" />
       </div>
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
@@ -17,16 +17,16 @@ export default function QuoteSection() {
           <i className="ri-double-quotes-l text-5xl text-brand-gold/60" />
         </motion.div>
         <motion.blockquote initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-serif text-white text-2xl sm:text-3xl md:text-4xl italic leading-relaxed mb-10">
+          className="font-serif text-brand-black text-2xl sm:text-3xl md:text-4xl italic leading-relaxed mb-10">
           No vendemos líquido, vendemos la{" "}
-          <span className="text-brand-gold">memoria olfativa</span>{" "}
+          <span className="text-brand-gold-dark">memoria olfativa</span>{" "}
           de tus mejores momentos.
         </motion.blockquote>
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.5 }}
           className="flex items-center justify-center gap-4">
-          <div className="h-px w-12 bg-brand-gold/40" />
-          <span className="text-brand-gold font-outfit text-xs tracking-[0.3em] uppercase">MAHETI</span>
-          <div className="h-px w-12 bg-brand-gold/40" />
+          <div className="h-px w-12 bg-brand-black/10" />
+          <span className="text-brand-black font-outfit text-xs tracking-[0.3em] uppercase">MAHETI</span>
+          <div className="h-px w-12 bg-brand-black/10" />
         </motion.div>
       </div>
       <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.4 }}
@@ -36,12 +36,12 @@ export default function QuoteSection() {
           { icon: "ri-truck-line", title: "Envío a Todo México", desc: "Embalaje premium con protección total. Tu pedido llega seguro." },
           { icon: "ri-shield-check-line", title: "Calidad Garantizada", desc: "Si no estás satisfecho, lo resolvemos. Sin preguntas." },
         ].map((feat) => (
-          <div key={feat.title} className="bg-white/5 border border-white/5 rounded-xl p-6 text-center hover:border-brand-gold/20 transition-colors duration-300">
+          <div key={feat.title} className="bg-white border border-brand-black/5 shadow-sm rounded-xl p-6 text-center hover:border-brand-gold/50 transition-all duration-300">
             <div className="w-12 h-12 flex items-center justify-center mx-auto mb-4">
-              <i className={`${feat.icon} text-2xl text-brand-gold`} />
+              <i className={`${feat.icon} text-2xl text-brand-gold-dark`} />
             </div>
-            <h3 className="font-serif text-white text-lg italic mb-2">{feat.title}</h3>
-            <p className="text-white/40 font-outfit text-sm leading-relaxed">{feat.desc}</p>
+            <h3 className="font-serif text-brand-black text-lg italic mb-2">{feat.title}</h3>
+            <p className="text-brand-black/50 font-outfit text-sm leading-relaxed">{feat.desc}</p>
           </div>
         ))}
       </motion.div>

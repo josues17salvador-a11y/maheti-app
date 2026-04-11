@@ -5,8 +5,9 @@ export default {
       colors: {
         "brand-black": "#173B64",
         "brand-gold": "#FFDE70",
-        "brand-gold-light": "#F6FAFF",
-        "brand-gold-dark": "#A3C4EB",
+        "brand-gold-light": "#A3C4EB",
+        "brand-gold-dark": "#0d223a",
+        "brand-bg": "#F6FAFF",
       },
       fontFamily: {
         serif: ["Playfair Display", "Georgia", "serif"],

@@ -68,14 +68,14 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-brand-black/95 backdrop-blur-lg border-b border-brand-gold/20" : "bg-transparent"}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-brand-bg/95 backdrop-blur-lg border-b border-brand-black/10" : "bg-transparent"}`}>
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-3 group">
             <div className="w-11 h-11 rounded-full border-2 border-brand-gold overflow-hidden flex-shrink-0 group-hover:border-brand-gold-light transition-colors duration-300">
               <img src={LOGO_URL} alt="MAHETI" className="w-full h-full object-cover" />
             </div>
-            <span className="font-serif text-xl text-white tracking-widest hidden sm:block italic">
-              MAHETI <span className="text-brand-gold/70 font-outfit text-sm tracking-[0.3em] uppercase not-italic font-normal">PERFUMES</span>
+            <span className="font-serif text-xl text-brand-black tracking-widest hidden sm:block italic">
+              MAHETI <span className="text-brand-gold/90 font-outfit text-sm tracking-[0.3em] uppercase not-italic font-normal">PERFUMES</span>
             </span>
           </Link>
 
@@ -88,7 +88,7 @@ export default function Navbar() {
                 </a>
               ) : (
                 <Link key={link.to} to={link.to}
-                  className={`font-outfit text-sm tracking-widest uppercase transition-colors duration-300 ${location.pathname === link.to ? "text-brand-gold" : "text-white/70 hover:text-brand-gold"}`}>
+                  className={`font-outfit text-sm tracking-widest uppercase transition-colors duration-300 ${location.pathname === link.to ? "text-brand-gold" : "text-brand-black/70 hover:text-brand-gold"}`}>
                   {link.label}
                 </Link>
               )
@@ -98,7 +98,7 @@ export default function Navbar() {
           <div className="flex items-center gap-5">
             <div ref={searchRef} className="relative hidden sm:block">
               <button onClick={() => setSearchOpen(!searchOpen)}
-                className="w-9 h-9 flex items-center justify-center text-white/70 hover:text-brand-gold transition-colors duration-300 cursor-pointer">
+                className="w-9 h-9 flex items-center justify-center text-brand-black/70 hover:text-brand-gold transition-colors duration-300 cursor-pointer">
                 <i className="ri-search-line text-xl" />
               </button>
               <AnimatePresence>
@@ -109,7 +109,7 @@ export default function Navbar() {
                       <i className="ri-search-line text-brand-gold" />
                       <input autoFocus type="text" placeholder="Buscar fragancias..." value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
-                        className="flex-1 bg-transparent text-white text-sm outline-none placeholder-white/30 font-outfit" />
+                        className="flex-1 bg-transparent text-brand-black text-sm outline-none placeholder-brand-black/30 font-outfit" />
                     </div>
                     {filteredProducts.length > 0 && (
                       <div className="max-h-72 overflow-y-auto">
@@ -120,8 +120,8 @@ export default function Navbar() {
                               <img src={p.image} alt={p.name} className="w-full h-full object-cover" />
                             </div>
                             <div>
-                                <p className="text-white text-sm font-serif italic">{p.name}</p>
-                                <p className="text-brand-gold/60 text-xs uppercase tracking-tighter">{p.category}</p>
+                                <p className="text-brand-black text-sm font-serif italic">{p.name}</p>
+                                <p className="text-brand-gold/80 text-xs uppercase tracking-tighter">{p.category}</p>
                             </div>
                           </Link>
                         ))}
@@ -132,7 +132,7 @@ export default function Navbar() {
               </AnimatePresence>
             </div>
 
-            <button onClick={() => setCartOpen(true)} className="relative w-9 h-9 flex items-center justify-center text-white/70 hover:text-brand-gold transition-colors duration-300 cursor-pointer">
+            <button onClick={() => setCartOpen(true)} className="relative w-9 h-9 flex items-center justify-center text-brand-black/70 hover:text-brand-gold transition-colors duration-300 cursor-pointer">
                 <i className="ri-shopping-bag-line text-xl" />
                 {totalItems > 0 && (
                     <span className="absolute -top-1 -right-1 w-4 h-4 bg-brand-gold text-black text-[10px] font-bold rounded-full flex items-center justify-center">
@@ -141,7 +141,7 @@ export default function Navbar() {
                 )}
             </button>
 
-            <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden w-9 h-9 flex items-center justify-center text-white/70 hover:text-brand-gold transition-colors duration-300 cursor-pointer">
+            <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden w-9 h-9 flex items-center justify-center text-brand-black/70 hover:text-brand-gold transition-colors duration-300 cursor-pointer">
                 <i className={mobileOpen ? "ri-close-line text-2xl" : "ri-menu-3-line text-2xl"} />
             </button>
           </div>
@@ -155,10 +155,10 @@ export default function Navbar() {
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setCartOpen(false)}
                     className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[60]" />
                 <motion.div initial={{ x: "100%" }} animate={{ x: 0 }} exit={{ x: "100%" }} transition={{ type: "tween", duration: 0.4 }}
-                    className="fixed top-0 right-0 bottom-0 w-full max-w-md bg-brand-black z-[70] shadow-2xl flex flex-col">
-                    <div className="p-6 border-b border-white/10 flex items-center justify-between">
-                        <h2 className="text-white font-serif text-2xl italic">Mi Bolsa <span className="text-brand-gold text-sm not-italic ml-2">({totalItems})</span></h2>
-                        <button onClick={() => setCartOpen(false)} className="text-white/50 hover:text-brand-gold transition-colors cursor-pointer">
+                    className="fixed top-0 right-0 bottom-0 w-full max-w-md bg-white z-[70] shadow-2xl flex flex-col">
+                    <div className="p-6 border-b border-brand-black/5 flex items-center justify-between">
+                        <h2 className="text-brand-black font-serif text-2xl italic">Mi Bolsa <span className="text-brand-gold text-sm not-italic ml-2">({totalItems})</span></h2>
+                        <button onClick={() => setCartOpen(false)} className="text-brand-black/30 hover:text-brand-gold transition-colors cursor-pointer">
                             <i className="ri-close-large-line text-xl" />
                         </button>
                     </div>
@@ -177,8 +177,8 @@ export default function Navbar() {
                                     </div>
                                     <div className="flex-1">
                                         <div className="flex justify-between items-start mb-1">
-                                            <h3 className="text-white font-serif italic text-lg">{item.product.name}</h3>
-                                            <button onClick={() => removeFromCart(item.product.id)} className="text-white/20 hover:text-red-500 transition-colors">
+                                            <h3 className="text-brand-black font-serif italic text-lg">{item.product.name}</h3>
+                                            <button onClick={() => removeFromCart(item.product.id)} className="text-brand-black/10 hover:text-red-500 transition-colors">
                                                 <i className="ri-delete-bin-line" />
                                             </button>
                                         </div>
@@ -200,8 +200,8 @@ export default function Navbar() {
                     {items.length > 0 && (
                         <div className="p-6 border-t border-white/10 bg-black/50">
                             <div className="flex items-center justify-between mb-6">
-                                <span className="text-white/50 font-outfit uppercase text-xs tracking-widest">Subtotal</span>
-                                <span className="text-brand-gold font-serif text-2xl">${totalPrice} <span className="text-xs uppercase font-outfit text-brand-gold/60">MXN</span></span>
+                                <span className="text-brand-black/40 font-outfit uppercase text-xs tracking-widest">Subtotal</span>
+                                <span className="text-brand-black font-serif text-2xl">${totalPrice} <span className="text-xs uppercase font-outfit text-brand-gold/80">MXN</span></span>
                             </div>
                             <Link to="/checkout" className="w-full block bg-brand-gold text-black text-center py-4 font-outfit font-bold uppercase tracking-[0.2em] text-sm rounded hover:bg-brand-gold-light transition-all shadow-lg shadow-brand-gold/10">
                                 Finalizar Pedido
@@ -217,17 +217,17 @@ export default function Navbar() {
       <AnimatePresence>
           {mobileOpen && (
               <motion.div initial={{ x: "-100%" }} animate={{ x: 0 }} exit={{ x: "-100%" }} transition={{ type: "tween", duration: 0.4 }}
-                className="fixed inset-0 bg-brand-black z-40 md:hidden flex flex-col p-10 pt-32">
+                className="fixed inset-0 bg-brand-bg z-40 md:hidden flex flex-col p-10 pt-32">
                   <div className="flex flex-col gap-8">
                       {navLinks.map((link) => (
                            link.label === "Contacto" ? (
                             <a key={link.to} href="/#contacto" onClick={handleContactClick}
-                              className="font-serif text-4xl text-white italic hover:text-brand-gold transition-colors">
+                              className="font-serif text-4xl text-brand-black italic hover:text-brand-gold transition-colors">
                               {link.label}
                             </a>
                           ) : (
                             <Link key={link.to} to={link.to}
-                              className={`font-serif text-4xl italic transition-colors ${location.pathname === link.to ? "text-brand-gold" : "text-white hover:text-brand-gold"}`}>
+                              className={`font-serif text-4xl italic transition-colors ${location.pathname === link.to ? "text-brand-gold" : "text-brand-black hover:text-brand-gold"}`}>
                               {link.label}
                             </Link>
                           )
@@ -237,10 +237,10 @@ export default function Navbar() {
                   <div className="mt-auto">
                       <p className="text-brand-gold font-outfit text-xs tracking-widest uppercase mb-4 text-center opacity-50">Síguenos</p>
                       <div className="flex justify-center gap-6">
-                        <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="text-white/70 text-3xl hover:text-brand-gold transition-colors">
+                        <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="text-brand-black/70 text-3xl hover:text-brand-gold transition-colors">
                             <i className="ri-instagram-line" />
                         </a>
-                        <a href="https://wa.me/528331863939" target="_blank" rel="noopener noreferrer" className="text-white/70 text-3xl hover:text-brand-gold transition-colors">
+                        <a href="https://wa.me/528331863939" target="_blank" rel="noopener noreferrer" className="text-brand-black/70 text-3xl hover:text-brand-gold transition-colors">
                             <i className="ri-whatsapp-line" />
                         </a>
                       </div>

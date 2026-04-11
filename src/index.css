@@ -6,12 +6,13 @@
   --brand-black: #173B64;
   --brand-gold: #FFDE70;
   --brand-gold-muted: #A3C4EB;
-  --brand-white: #F6FAFF;
+  --brand-bg: #F6FAFF;
+  --brand-white: #FFFFFF;
 }
 
 body {
-  background-color: var(--brand-black);
-  color: white;
+  background-color: var(--brand-bg);
+  color: var(--brand-black);
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   letter-spacing: -0.01em;
