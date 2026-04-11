@@ -29,7 +29,7 @@ export default function ExclusivePromo() {
                 transition={{ duration: 0.8 }}
                 src={comboProduct.image} 
                 alt="JPG Exclusive Duo" 
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-contain p-8"
               />
               <div className="absolute inset-0 bg-brand-bg/20 group-hover:bg-transparent transition-colors duration-700" />
             </div>

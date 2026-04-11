@@ -17,7 +17,7 @@ export default function ProductsPage() {
         p.name.toLowerCase().includes(search.toLowerCase()) ||
         p.category.toLowerCase().includes(search.toLowerCase()) ||
         p.description.toLowerCase().includes(search.toLowerCase());
-      const matchesCategory = activeCategory === "Todos" || p.category === activeCategory;
+      const matchesCategory = activeCategory === "Todos" ? p.category !== "Promociones" : p.category === activeCategory;
       return matchesSearch && matchesCategory;
     });
   }, [search, activeCategory]);

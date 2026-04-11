@@ -63,6 +63,7 @@ export default function Navbar() {
   const navLinks = [
     { label: "Inicio", to: "/" },
     { label: "Productos", to: "/productos" },
+    { label: "Ofertas", to: "/ofertas" },
     { label: "Contacto", to: "/#contacto" },
   ];
 
@@ -83,7 +84,7 @@ export default function Navbar() {
             {navLinks.map((link) =>
               link.label === "Contacto" ? (
                 <a key={link.to} href="/#contacto" onClick={handleContactClick}
-                  className="font-outfit text-sm tracking-widest uppercase transition-colors duration-300 text-brand-black/70 hover:text-brand-gold cursor-pointer">
+                  className="font-outfit text-sm tracking-widest uppercase transition-colors duration-300 text-white/70 hover:text-brand-gold cursor-pointer">
                   {link.label}
                 </a>
               ) : (
@@ -98,7 +99,7 @@ export default function Navbar() {
           <div className="flex items-center gap-5">
             <div ref={searchRef} className="relative hidden sm:block">
               <button onClick={() => setSearchOpen(!searchOpen)}
-                className="w-9 h-9 flex items-center justify-center text-brand-black/70 hover:text-brand-gold transition-colors duration-300 cursor-pointer">
+                className="w-9 h-9 flex items-center justify-center text-white/70 hover:text-brand-gold transition-colors duration-300 cursor-pointer">
                 <i className="ri-search-line text-xl" />
               </button>
               <AnimatePresence>
@@ -141,7 +142,7 @@ export default function Navbar() {
                 )}
             </button>
 
-            <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden w-9 h-9 flex items-center justify-center text-brand-black/70 hover:text-brand-gold transition-colors duration-300 cursor-pointer">
+            <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden w-9 h-9 flex items-center justify-center text-white/70 hover:text-brand-gold transition-colors duration-300 cursor-pointer">
                 <i className={mobileOpen ? "ri-close-line text-2xl" : "ri-menu-3-line text-2xl"} />
             </button>
           </div>

@@ -11,7 +11,7 @@ import jpgLeBeauImg from "../assets/perfumes/JPG Le Beau le parfum.png";
 import odysseyAquaImg from "../assets/perfumes/Odissey aqua.png";
 import comboJpgImg from "../assets/promociones/2JPGx300.png";
 
-export type Category = "Cítrico" | "Acuático" | "Amaderado" | "Oriental" | "Especia";
+export type Category = "Cítrico" | "Acuático" | "Amaderado" | "Oriental" | "Especia" | "Promociones";
 
 export interface Product {
   id: number;
@@ -147,12 +147,12 @@ export const products: Product[] = [
     price: 300,
     presentation: "2 Decants x 5ml",
     description: "La combinación definitiva de Jean Paul Gaultier. Paradise Garden y Le Beau Le Parfum en un pack exclusivo de 5ml cada uno.",
-    category: "Promociones" as any,
+    category: "Promociones",
     stock: 5,
     image: comboJpgImg,
     isBestSeller: true,
   },
 ];
 
-export const bestSellers = products.filter((p) => p.isBestSeller);
-export const categories: Category[] = ["Cítrico", "Acuático", "Amaderado", "Oriental", "Especia"];
+export const bestSellers = products.filter((p) => p.isBestSeller && p.category !== "Promociones");
+export const categories: Category[] = ["Cítrico", "Acuático", "Amaderado", "Oriental", "Especia", "Promociones"];
