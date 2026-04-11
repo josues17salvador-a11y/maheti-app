@@ -8,6 +8,7 @@ import ninePmImg from "../assets/perfumes/9pm.png";
 import jpgParadiseImg from "../assets/perfumes/JPG Paradise garden.png";
 import dylanBlueImg from "../assets/perfumes/Dylan blue.png";
 import jpgLeBeauImg from "../assets/perfumes/JPG Le Beau le parfum.png";
+import odysseyAquaImg from "../assets/perfumes/Odissey aqua.png";
 
 export type Category = "Cítrico" | "Acuático" | "Amaderado" | "Oriental" | "Especia";
 
@@ -128,6 +129,16 @@ export const products: Product[] = [
     stock: 8,
     image: jpgLeBeauImg,
     isBestSeller: true,
+  },
+  {
+    id: 11,
+    name: "Odyssey Aqua",
+    price: 90,
+    presentation: "Decant 5ml",
+    description: "Fragancia acuática y fresca con una salida cítrica vibrante y un fondo limpio.",
+    category: "Acuático",
+    stock: 12,
+    image: odysseyAquaImg,
   },
 ];
 
