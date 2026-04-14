@@ -9,6 +9,8 @@ import jpgParadiseImg from "../assets/perfumes/JPG Paradise garden.png";
 import dylanBlueImg from "../assets/perfumes/Dylan blue.png";
 import jpgLeBeauImg from "../assets/perfumes/JPG Le Beau le parfum.png";
 import odysseyAquaImg from "../assets/perfumes/Odissey aqua.png";
+import hawasIceImg from "../assets/perfumes/hawas ice.png";
+import valentinoCoralImg from "../assets/perfumes/valentino coral fantasy.png";
 import comboJpgImg from "../assets/promociones/2JPGx300.png";
 
 export type Category = "Cítrico" | "Acuático" | "Amaderado" | "Oriental" | "Especia" | "Promociones";
@@ -76,7 +78,7 @@ export const products: Product[] = [
     presentation: "Decant 5ml",
     description: "Clásico fresco, mezcla de cítricos, lavanda y notas verdes.",
     category: "Cítrico",
-    stock: 18,
+    stock: 0,
     image: tommyImg,
   },
   {
@@ -140,6 +142,28 @@ export const products: Product[] = [
     category: "Acuático",
     stock: 12,
     image: odysseyAquaImg,
+  },
+  {
+    id: 12,
+    name: "Hawas Ice (Rasasi)",
+    price: 110,
+    presentation: "Decant 5ml",
+    description: "Frescura helada con notas cítricas, manzana y un fondo acuático revitalizante.",
+    category: "Acuático",
+    stock: 15,
+    image: hawasIceImg,
+    isBestSeller: true,
+  },
+  {
+    id: 13,
+    name: "Valentino Coral Fantasy",
+    price: 230,
+    presentation: "Decant 5ml",
+    description: "Una fragancia vibrante con notas de manzana roja, tabaco y un fondo de pachulí elegante.",
+    category: "Amaderado",
+    stock: 10,
+    image: valentinoCoralImg,
+    isBestSeller: true,
   },
   {
     id: 100,

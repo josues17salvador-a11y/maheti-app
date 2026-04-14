@@ -19,15 +19,26 @@ export default function BestSellers() {
             <motion.div key={product.id} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: index * 0.15 }}
               className="group relative glass-morphism rounded-xl overflow-hidden transition-all duration-500">
               <div className="absolute top-4 left-4 z-10 flex gap-2">
-                <span className="bg-brand-gold text-brand-black text-xs font-outfit font-semibold px-2 py-0.5 rounded-full">5ML</span>
+                <span className="bg-brand-gold text-black text-xs font-outfit font-semibold px-2 py-0.5 rounded-full">5ML</span>
                 <span className="bg-brand-black/5 text-brand-black/60 text-xs font-outfit px-2 py-0.5 rounded-full backdrop-blur-sm">{product.category}</span>
               </div>
+              {product.stock === 0 && (
+                <div className="absolute top-4 right-4 z-10">
+                  <span className="bg-red-600 text-white text-[10px] font-outfit font-bold px-2 py-0.5 rounded-full border border-red-500 uppercase tracking-tighter">
+                    AGOTADO
+                  </span>
+                </div>
+              )}
               <div className="relative h-72 overflow-hidden">
-                <img src={product.image} alt={product.name} className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
+                <img src={product.image} alt={product.name} className={`w-full h-full object-cover object-top transition-all duration-700 ${product.stock === 0 ? 'grayscale brightness-50' : 'grayscale group-hover:grayscale-0 group-hover:scale-105'}`} />
                 <div className="absolute inset-0 bg-brand-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-400">
-                  <button onClick={() => addToCart(product)} className="w-full bg-brand-gold text-black py-2.5 font-outfit font-semibold text-sm tracking-widest uppercase rounded-lg hover:bg-brand-gold/90 transition-colors cursor-pointer whitespace-nowrap">
-                    Añadir a la Bolsa
+                  <button 
+                    onClick={product.stock === 0 ? undefined : () => addToCart(product)} 
+                    disabled={product.stock === 0}
+                    className={`w-full py-2.5 font-outfit font-semibold text-sm tracking-widest uppercase rounded-lg transition-colors whitespace-nowrap ${product.stock === 0 ? 'bg-white/10 text-white/20 cursor-not-allowed' : 'bg-brand-gold text-black hover:bg-brand-gold/90 cursor-pointer'}`}
+                  >
+                    {product.stock === 0 ? "No disponible" : "Añadir a la Bolsa"}
                   </button>
                 </div>
               </div>
@@ -36,7 +47,9 @@ export default function BestSellers() {
                 <p className="text-white/50 font-outfit text-sm leading-relaxed mb-4 line-clamp-2">{product.description}</p>
                 <div className="flex items-center justify-between">
                   <span className="text-white font-serif text-xl font-semibold">${product.price} <span className="text-sm font-outfit font-normal text-white/40">MXN</span></span>
-                  <span className="text-white/20 font-outfit text-xs">{product.stock} disponibles</span>
+                  <span className={`font-outfit text-xs ${product.stock === 0 ? 'text-red-500/60' : 'text-white/20'}`}>
+                    {product.stock === 0 ? "Agotado" : `${product.stock} disponibles`}
+                  </span>
                 </div>
               </div>
             </motion.div>

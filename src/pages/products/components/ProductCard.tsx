@@ -53,8 +53,12 @@ export default function ProductCard({ product }: { product: Product }) {
       
       {product.stock <= 5 && (
         <div className="absolute top-4 right-4 z-10">
-          <span className="bg-red-900/60 text-red-300 text-xs font-outfit px-2.5 py-0.5 rounded-full border border-red-800/40 whitespace-nowrap">
-            Últimos {product.stock}
+          <span className={`text-xs font-outfit px-2.5 py-0.5 rounded-full border whitespace-nowrap ${
+            product.stock === 0 
+              ? "bg-red-600 text-white border-red-500 font-bold" 
+              : "bg-red-900/60 text-red-300 border-red-800/40"
+          }`}>
+            {product.stock === 0 ? "AGOTADO" : `Últimos ${product.stock}`}
           </span>
         </div>
       )}
@@ -64,19 +68,20 @@ export default function ProductCard({ product }: { product: Product }) {
           src={product.image}
           alt={product.name}
           loading="lazy"
-          className="w-full h-full object-contain group-hover:scale-110 transition-all duration-700"
-          style={{ filter: "grayscale(20%)" }}
-          onMouseEnter={(e) => { (e.currentTarget as HTMLImageElement).style.filter = "grayscale(0%)"; }}
-          onMouseLeave={(e) => { (e.currentTarget as HTMLImageElement).style.filter = "grayscale(20%)"; }}
+          className={`w-full h-full object-contain transition-all duration-700 ${product.stock === 0 ? 'grayscale' : 'group-hover:scale-110'}`}
+          style={{ filter: product.stock === 0 ? "grayscale(100%) brightness(0.7)" : "grayscale(20%)" }}
+          onMouseEnter={(e) => { if(product.stock > 0) (e.currentTarget as HTMLImageElement).style.filter = "grayscale(0%)"; }}
+          onMouseLeave={(e) => { if(product.stock > 0) (e.currentTarget as HTMLImageElement).style.filter = "grayscale(20%)"; }}
         />
         <div className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
           style={{ background: "linear-gradient(to top, rgba(23,59,100,0.8) 0%, rgba(23,59,100,0.2) 60%, transparent 100%)" }} />
         
         <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-400 z-10">
           <button
-            onClick={handleAdd}
-            className={`relative w-full py-2.5 font-outfit font-semibold text-sm tracking-widest uppercase rounded-lg transition-all duration-500 cursor-pointer overflow-hidden shadow-lg ${!added && 'gold-sheen'}`}
-            style={{ background: added ? "#22c55e" : "", color: added ? "#fff" : "#173B64" }}
+            onClick={product.stock === 0 ? undefined : handleAdd}
+            disabled={product.stock === 0}
+            className={`relative w-full py-2.5 font-outfit font-semibold text-sm tracking-widest uppercase rounded-lg transition-all duration-500 overflow-hidden shadow-lg ${!added && product.stock > 0 && 'gold-sheen'} ${product.stock === 0 ? 'bg-white/10 text-white/30 cursor-not-allowed border border-white/5' : ''}`}
+            style={{ background: added ? "#22c55e" : "", color: added ? "#fff" : (product.stock === 0 ? "" : "#173B64") }}
           >
             <AnimatePresence>
               {shimmerActive && !added && (
@@ -103,7 +108,7 @@ export default function ProductCard({ product }: { product: Product }) {
               ) : (
                 <motion.span key="add" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}
                   className="relative z-10">
-                  Añadir a la Bolsa
+                  {product.stock === 0 ? "No disponible" : "Añadir a la Bolsa"}
                 </motion.span>
               )}
             </AnimatePresence>
