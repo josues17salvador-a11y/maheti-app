@@ -35,7 +35,7 @@ export const products: Product[] = [
     presentation: "Decant 5ml",
     description: "Frescura cítrica con mandarina jugosa y un toque amaderado.",
     category: "Cítrico",
-    stock: 15,
+    stock: 0,
     image: mandarinSkyImg,
     isBestSeller: true,
   },
