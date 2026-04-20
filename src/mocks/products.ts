@@ -11,9 +11,11 @@ import jpgLeBeauImg from "../assets/perfumes/JPG Le Beau le parfum.png";
 import odysseyAquaImg from "../assets/perfumes/Odissey aqua.png";
 import hawasIceImg from "../assets/perfumes/hawas ice.png";
 import valentinoCoralImg from "../assets/perfumes/valentino coral fantasy.png";
+import ariByArianaImg from "../assets/perfumes/(Ari)Ariana grande.png";
 import comboJpgImg from "../assets/promociones/2JPGx300.png";
 
-export type Category = "Cítrico" | "Acuático" | "Amaderado" | "Oriental" | "Especia" | "Promociones";
+
+export type Category = "Cítrico" | "Acuático" | "Amaderado" | "Oriental" | "Especia" | "Promociones" | "Frutal";
 
 export interface Product {
   id: number;
@@ -88,7 +90,7 @@ export const products: Product[] = [
     presentation: "Decant 5ml",
     description: "Menta vibrante, manzana verde y vainilla seductora.",
     category: "Oriental",
-    stock: 8,
+    stock: 0,
     image: versaceErosImg,
   },
   {
@@ -176,7 +178,18 @@ export const products: Product[] = [
     image: comboJpgImg,
     isBestSeller: true,
   },
+  {
+    id: 14,
+    name: "ARI by Ariana Grande",
+    price: 95,
+    presentation: "Decant 5ml",
+    description: "Una fragancia deliciosa con notas de pera, frambuesa y un toque dulce de malvavisco.",
+    category: "Frutal",
+    stock: 10,
+    image: ariByArianaImg,
+  },
 ];
 
+
 export const bestSellers = products.filter((p) => p.isBestSeller && p.category !== "Promociones");
-export const categories: Category[] = ["Cítrico", "Acuático", "Amaderado", "Oriental", "Especia", "Promociones"];
+export const categories: Category[] = ["Cítrico", "Acuático", "Amaderado", "Oriental", "Especia", "Promociones", "Frutal"];
