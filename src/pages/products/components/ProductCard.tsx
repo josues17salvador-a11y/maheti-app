@@ -126,11 +126,16 @@ export default function ProductCard({ product }: { product: Product }) {
             <span className="text-white font-serif text-xl font-semibold">${product.price}</span>
             <span className="text-white/40 font-outfit text-xs ml-1">MXN</span>
           </div>
-          {inCart && (
-            <span className="text-brand-gold/60 font-outfit text-xs bg-brand-gold/10 px-2 py-1 rounded-full border border-brand-gold/20">
-              {inCart.quantity} en bolsa
-            </span>
-          )}
+          <div className="text-right">
+            <p className={`text-[10px] font-outfit uppercase tracking-widest ${product.stock === 0 ? 'text-red-500 font-bold' : 'text-white/30'}`}>
+              {product.stock === 0 ? 'Agotado' : `${product.stock} disponibles`}
+            </p>
+            {inCart && (
+              <span className="text-brand-gold/60 font-outfit text-[10px] bg-brand-gold/10 px-2 py-0.5 rounded-full border border-brand-gold/20 block mt-1 uppercase">
+                {inCart.quantity} en bolsa
+              </span>
+            )}
+          </div>
         </div>
       </div>
     </motion.article>

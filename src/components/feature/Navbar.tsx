@@ -122,7 +122,13 @@ export default function Navbar() {
                             </div>
                             <div>
                                 <p className="text-brand-black text-sm font-serif italic">{p.name}</p>
-                                <p className="text-brand-gold/80 text-xs uppercase tracking-tighter">{p.category}</p>
+                                <div className="flex items-center gap-3">
+                                    <p className="text-brand-gold/80 text-[10px] uppercase tracking-tighter">{p.category}</p>
+                                    <span className="w-1 h-1 rounded-full bg-brand-gold/20" />
+                                    <p className={`text-[9px] uppercase tracking-tighter ${p.stock === 0 ? 'text-red-500 font-bold' : 'text-brand-black/30'}`}>
+                                        {p.stock === 0 ? 'Agotado' : `${p.stock} disp.`}
+                                    </p>
+                                </div>
                             </div>
                           </Link>
                         ))}
@@ -183,12 +189,14 @@ export default function Navbar() {
                                                 <i className="ri-delete-bin-line" />
                                             </button>
                                         </div>
-                                        <p className="text-brand-gold/60 text-xs uppercase tracking-widest mb-3">5ML · {item.product.category}</p>
+                                        <p className="text-brand-gold/60 text-[10px] uppercase tracking-widest mb-3">
+                                            5ML · {item.product.category} · <span className={item.product.stock <= 3 ? 'text-red-400 font-bold' : ''}>{item.product.stock} disponibles</span>
+                                        </p>
                                         <div className="flex items-center justify-between">
                                             <div className="flex items-center gap-3 border border-white/10 rounded px-2 py-1">
                                                 <button onClick={() => updateQuantity(item.product.id, item.quantity - 1)} className="text-white/40 hover:text-brand-gold">-</button>
                                                 <span className="text-white text-xs w-4 text-center">{item.quantity}</span>
-                                                <button onClick={() => updateQuantity(item.product.id, item.quantity + 1)} className="text-white/40 hover:text-brand-gold">+</button>
+                                                <button onClick={() => updateQuantity(item.product.id, item.quantity + 1)} disabled={item.quantity >= item.product.stock} className={`text-white/40 hover:text-brand-gold transition-colors ${item.quantity >= item.product.stock ? 'opacity-30 cursor-not-allowed hover:text-white/40' : ''}`}>+</button>
                                             </div>
                                             <span className="text-brand-gold font-serif">${item.product.price * item.quantity}</span>
                                         </div>
