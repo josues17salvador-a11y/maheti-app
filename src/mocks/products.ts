@@ -13,6 +13,7 @@ import hawasIceImg from "../assets/perfumes/hawas ice.png";
 import valentinoCoralImg from "../assets/perfumes/valentino coral fantasy.png";
 import ariByArianaImg from "../assets/perfumes/(Ari)Ariana grande.png";
 import comboJpgImg from "../assets/promociones/2JPGx300.png";
+import fresh3x225Img from "../assets/promociones/fresh3x225.png";
 
 
 export type Category = "Cítrico" | "Acuático" | "Amaderado" | "Oriental" | "Especia" | "Frutal" | "Promociones";
@@ -176,6 +177,17 @@ export const products: Product[] = [
     category: "Promociones",
     stock: 3,
     image: comboJpgImg,
+    isBestSeller: true,
+  },
+  {
+    id: 101,
+    name: "Trío pack: Fresh Selection",
+    price: 225,
+    presentation: "3 Decants x 5ml",
+    description: "La frescura elevada al cubo. Una selección de nuestras tres fragancias más vibrantes y cítricas en un pack de 5ml cada una.",
+    category: "Promociones",
+    stock: 5,
+    image: fresh3x225Img,
     isBestSeller: true,
   },
   {

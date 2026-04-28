@@ -60,6 +60,12 @@ export default function PromotionsPage() {
                         {promo.description}
                       </p>
                       
+                      <div className="flex items-center gap-2 mb-8">
+                        <span className={`text-[10px] font-outfit px-3 py-1 rounded-full border uppercase tracking-[0.2em] ${promo.stock <= 3 ? 'bg-red-500/10 text-red-500 border-red-500/20' : 'bg-brand-gold/10 text-brand-gold border-brand-gold/20'}`}>
+                          {promo.stock === 0 ? 'Agotado' : `${promo.stock} Unidades disponibles`}
+                        </span>
+                      </div>
+                      
                       <div className="flex flex-col sm:flex-row items-center gap-8">
                         <div className="flex flex-col">
                           <span className="text-white/30 font-outfit text-xs tracking-widest uppercase mb-1">Precio de Oferta</span>
