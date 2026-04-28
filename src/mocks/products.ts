@@ -15,7 +15,7 @@ import ariByArianaImg from "../assets/perfumes/(Ari)Ariana grande.png";
 import comboJpgImg from "../assets/promociones/2JPGx300.png";
 
 
-export type Category = "Cítrico" | "Acuático" | "Amaderado" | "Oriental" | "Especia" | "Promociones" | "Frutal";
+export type Category = "Cítrico" | "Acuático" | "Amaderado" | "Oriental" | "Especia" | "Frutal" | "Promociones";
 
 export interface Product {
   id: number;
@@ -37,7 +37,7 @@ export const products: Product[] = [
     presentation: "Decant 5ml",
     description: "Frescura cítrica con mandarina jugosa y un toque amaderado.",
     category: "Cítrico",
-    stock: 0,
+    stock: 15,
     image: mandarinSkyImg,
     isBestSeller: true,
   },
