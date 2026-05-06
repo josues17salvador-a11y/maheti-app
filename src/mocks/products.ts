@@ -91,7 +91,7 @@ export const products: Product[] = [
     presentation: "Decant 5ml",
     description: "Menta vibrante, manzana verde y vainilla seductora.",
     category: "Oriental",
-    stock: 0,
+    stock: 10,
     image: versaceErosImg,
   },
   {
