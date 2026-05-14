@@ -73,7 +73,7 @@ export default function PromotionsPage() {
                         </div>
                         
                         <button 
-                          onClick={() => addToCart(promo)}
+                          onClick={() => addToCart(promo, "Combo")}
                           className="w-full sm:w-auto px-10 py-4 bg-brand-gold text-black font-outfit font-bold text-sm tracking-[0.2em] uppercase rounded-full hover:bg-brand-gold-light transition-all duration-300 shadow-xl shadow-brand-gold/10 gold-sheen cursor-pointer"
                         >
                           Añadir a la Bolsa

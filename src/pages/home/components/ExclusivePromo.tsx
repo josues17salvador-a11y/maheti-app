@@ -72,7 +72,7 @@ export default function ExclusivePromo() {
                 </div>
                 
                 <button 
-                  onClick={() => addToCart(comboProduct)}
+                  onClick={() => addToCart(comboProduct, "Combo")}
                   className="w-full sm:w-auto px-12 py-5 bg-brand-gold text-black font-outfit font-bold text-sm tracking-[0.2em] uppercase rounded-full hover:bg-brand-gold-light transition-all duration-300 shadow-xl shadow-brand-gold/10 gold-sheen cursor-pointer"
                 >
                   Añadir a la Bolsa
