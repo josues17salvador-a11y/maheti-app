@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import ProductCard from "../../pages/products/components/ProductCard";
+import ProductCard from "../../products/components/ProductCard";
 import { bestSellers } from "../../../mocks/products";
 
 export default function BestSellers() {
