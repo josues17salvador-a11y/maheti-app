@@ -47,7 +47,7 @@ export const products: Product[] = [
   {
     id: 15,
     name: "Mandarin Sky",
-    price: 160,
+    price: 180,
     presentation: "Decant 10ml",
     size: "10ml",
     description: "Frescura cítrica con mandarina jugosa y un toque amaderado. Formato ahorro 10ml.",
@@ -70,7 +70,7 @@ export const products: Product[] = [
   {
     id: 16,
     name: "Nautica Voyage",
-    price: 80,
+    price: 90,
     presentation: "Decant 10ml",
     size: "10ml",
     description: "Acuático y limpio, con manzana verde y notas marinas. Formato ahorro 10ml.",
@@ -93,7 +93,7 @@ export const products: Product[] = [
   {
     id: 17,
     name: "Bharara King",
-    price: 195,
+    price: 220,
     presentation: "Decant 10ml",
     size: "10ml",
     description: "Dulce y especiado, con cítricos brillantes y fondo de vainilla. Formato ahorro 10ml.",
@@ -115,7 +115,7 @@ export const products: Product[] = [
   {
     id: 18,
     name: "Khamrah Qahwa",
-    price: 160,
+    price: 180,
     presentation: "Decant 10ml",
     size: "10ml",
     description: "Café intenso con especias cálidas y vainilla cremosa. Formato ahorro 10ml.",
@@ -137,7 +137,7 @@ export const products: Product[] = [
   {
     id: 19,
     name: "Tommy (Hilfiger)",
-    price: 105,
+    price: 120,
     presentation: "Decant 10ml",
     size: "10ml",
     description: "Clásico fresco, mezcla de cítricos, lavanda y notas verdes. Formato ahorro 10ml.",
@@ -159,7 +159,7 @@ export const products: Product[] = [
   {
     id: 20,
     name: "Versace Eros",
-    price: 215,
+    price: 240,
     presentation: "Decant 10ml",
     size: "10ml",
     description: "Menta vibrante, manzana verde y vainilla seductora. Formato ahorro 10ml.",
@@ -181,7 +181,7 @@ export const products: Product[] = [
   {
     id: 21,
     name: "9PM (Afnan)",
-    price: 160,
+    price: 180,
     presentation: "Decant 10ml",
     size: "10ml",
     description: "Manzana y canela sobre un fondo cálido de vainilla y ámbar. Formato ahorro 10ml.",
@@ -204,7 +204,7 @@ export const products: Product[] = [
   {
     id: 22,
     name: "JPG Paradise Garden",
-    price: 290,
+    price: 320,
     presentation: "Decant 10ml",
     size: "10ml",
     description: "Una explosión tropical y exótica con notas verdes y acuáticas. Formato ahorro 10ml.",
@@ -226,7 +226,7 @@ export const products: Product[] = [
   {
     id: 23,
     name: "Dylan Blue (Versace)",
-    price: 195,
+    price: 220,
     presentation: "Decant 10ml",
     size: "10ml",
     description: "Carácter mediterráneo con fuertes notas cítricas y ambroxan. Formato ahorro 10ml.",
@@ -249,7 +249,7 @@ export const products: Product[] = [
   {
     id: 24,
     name: "JPG Le Beau Le Parfum",
-    price: 310,
+    price: 340,
     presentation: "Decant 10ml",
     size: "10ml",
     description: "Intensidad adictiva con coco, haba tonka y madera de sándalo. Formato ahorro 10ml.",
@@ -271,7 +271,7 @@ export const products: Product[] = [
   {
     id: 25,
     name: "Odyssey Aqua",
-    price: 160,
+    price: 180,
     presentation: "Decant 10ml",
     size: "10ml",
     description: "Fragancia acuática y fresca con una salida cítrica vibrante y un fondo limpio. Formato ahorro 10ml.",
@@ -294,7 +294,7 @@ export const products: Product[] = [
   {
     id: 26,
     name: "Hawas Ice (Rasasi)",
-    price: 195,
+    price: 220,
     presentation: "Decant 10ml",
     size: "10ml",
     description: "Frescura helada con notas cítricas, manzana y un fondo acuático revitalizante. Formato ahorro 10ml.",
@@ -317,7 +317,7 @@ export const products: Product[] = [
   {
     id: 27,
     name: "Valentino Coral Fantasy",
-    price: 410,
+    price: 460,
     presentation: "Decant 10ml",
     size: "10ml",
     description: "Una fragancia vibrante con notas de manzana roja, tabaco y un fondo de pachulí elegante. Formato ahorro 10ml.",
@@ -339,7 +339,7 @@ export const products: Product[] = [
   {
     id: 28,
     name: "ARI by Ariana Grande",
-    price: 170,
+    price: 190,
     presentation: "Decant 10ml",
     size: "10ml",
     description: "Una fragancia deliciosa con notas de pera, frambuesa y un toque dulce de malvavisco. Formato ahorro 10ml.",
