@@ -16,9 +16,10 @@ export default function WhatsAppFlow() {
     message += "*PRODUCTOS SELECCIONADOS:*\n\n";
     
     items.forEach((item) => {
-      message += `*${item.product.name}* (${item.product.size})\n`;
+      const price = item.size === "10ml" ? (item.product.price10ml || 0) : item.size === "5ml" ? (item.product.price5ml || 0) : (item.product.price || 0);
+      message += `*${item.product.name}* (${item.size})\n`;
       message += `   Cantidad: ${item.quantity}\n`;
-      message += `   Subtotal: $${item.product.price * item.quantity} MXN\n\n`;
+      message += `   Subtotal: $${price * item.quantity} MXN\n\n`;
     });
     
     message += "-----------------------------------------\n";
@@ -61,21 +62,24 @@ export default function WhatsAppFlow() {
         <div className="glass-morphism rounded-2xl p-8">
             <h2 className="text-white font-serif text-2xl italic mb-6">Resumen de Pedido</h2>
             <div className="space-y-6 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
-                {items.map((item) => (
-                    <div key={item.product.id} className="flex gap-4">
-                        <div className="w-16 h-20 rounded bg-brand-bg flex-shrink-0 overflow-hidden">
-                            <img src={item.product.image} alt={item.product.name} className="w-full h-full object-cover" />
-                        </div>
-                        <div className="flex-1">
-                            <h3 className="text-white text-base font-serif italic">{item.product.name}</h3>
-                            <p className="text-white/30 text-[10px] uppercase tracking-widest mb-2">{item.product.presentation}</p>
-                            <div className="flex items-center justify-between">
-                                <span className="text-white/40 text-xs">{item.quantity} x ${item.product.price}</span>
-                                <span className="text-white font-semibold">${item.product.price * item.quantity}</span>
+                {items.map((item) => {
+                    const price = item.size === "10ml" ? (item.product.price10ml || 0) : item.size === "5ml" ? (item.product.price5ml || 0) : (item.product.price || 0);
+                    return (
+                        <div key={`${item.product.id}-${item.size}`} className="flex gap-4">
+                            <div className="w-16 h-20 rounded bg-brand-bg flex-shrink-0 overflow-hidden">
+                                <img src={item.product.image} alt={item.product.name} className="w-full h-full object-cover" />
+                            </div>
+                            <div className="flex-1">
+                                <h3 className="text-white text-base font-serif italic">{item.product.name}</h3>
+                                <p className="text-white/30 text-[10px] uppercase tracking-widest mb-2">{item.size === "Combo" ? item.product.presentation : `Decant ${item.size}`}</p>
+                                <div className="flex items-center justify-between">
+                                    <span className="text-white/40 text-xs">{item.quantity} x ${price}</span>
+                                    <span className="text-white font-semibold">${price * item.quantity}</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                ))}
+                    );
+                })}
             </div>
             
             <div className="mt-8 pt-8 border-t border-white/10 space-y-4">

@@ -7,10 +7,16 @@ export default function ProductCard({ product }: { product: Product }) {
   const { addToCart, items } = useCart();
   const [added, setAdded] = useState(false);
   const [shimmerActive, setShimmerActive] = useState(false);
+  const [selectedSize, setSelectedSize] = useState<"5ml" | "10ml" | "Combo">(
+    product.category === "Promociones" ? "Combo" : "5ml"
+  );
+  
   const shimmerTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const shimmerInterval = useRef<ReturnType<typeof setInterval> | null>(null);
   
-  const inCart = items.find((i) => i.product.id === product.id);
+  const currentPrice = selectedSize === "10ml" ? product.price10ml : selectedSize === "5ml" ? product.price5ml : product.price;
+  const currentStock = selectedSize === "10ml" ? product.stock10ml : selectedSize === "5ml" ? product.stock5ml : product.stock;
+  const inCart = items.find((i) => i.product.id === product.id && i.size === selectedSize);
 
   useEffect(() => {
     shimmerTimer.current = setTimeout(() => {
@@ -31,7 +37,7 @@ export default function ProductCard({ product }: { product: Product }) {
   const handleAdd = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    addToCart(product);
+    addToCart(product, selectedSize);
     setAdded(true);
     setTimeout(() => setAdded(false), 1500);
   };
@@ -47,18 +53,20 @@ export default function ProductCard({ product }: { product: Product }) {
       className="group relative glass-morphism rounded-xl overflow-hidden transition-all duration-500 cursor-pointer"
     >
       <div className="absolute top-4 left-4 z-10 flex gap-2 flex-wrap">
-        <span className="bg-brand-gold text-black text-xs font-outfit font-bold px-2.5 py-0.5 rounded-full whitespace-nowrap uppercase">{product.size}</span>
-        <span className="bg-white/5 text-white/50 text-xs font-outfit px-2.5 py-0.5 rounded-full backdrop-blur-sm whitespace-nowrap border border-white/5 uppercase tracking-wider">{product.category}</span>
+        <span className="bg-brand-gold text-black text-[10px] font-outfit font-bold px-2 py-0.5 rounded-full whitespace-nowrap uppercase tracking-tighter">
+          {selectedSize === "Combo" ? product.presentation : selectedSize}
+        </span>
+        <span className="bg-white/5 text-white/50 text-[10px] font-outfit px-2 py-0.5 rounded-full backdrop-blur-sm whitespace-nowrap border border-white/5 uppercase tracking-wider">{product.category}</span>
       </div>
       
-      {product.stock <= 5 && (
+      {currentStock !== undefined && currentStock <= 5 && (
         <div className="absolute top-4 right-4 z-10">
-          <span className={`text-xs font-outfit px-2.5 py-0.5 rounded-full border whitespace-nowrap ${
-            product.stock === 0 
+          <span className={`text-[10px] font-outfit px-2 py-0.5 rounded-full border whitespace-nowrap ${
+            currentStock === 0 
               ? "bg-red-600 text-white border-red-500 font-bold" 
               : "bg-red-900/60 text-red-300 border-red-800/40"
           }`}>
-            {product.stock === 0 ? "AGOTADO" : `Últimos ${product.stock}`}
+            {currentStock === 0 ? "AGOTADO" : `Últimos ${currentStock}`}
           </span>
         </div>
       )}
@@ -68,20 +76,20 @@ export default function ProductCard({ product }: { product: Product }) {
           src={product.image}
           alt={product.name}
           loading="lazy"
-          className={`w-full h-full object-contain transition-all duration-700 ${product.stock === 0 ? 'grayscale' : 'group-hover:scale-110'}`}
-          style={{ filter: product.stock === 0 ? "grayscale(100%) brightness(0.7)" : "grayscale(20%)" }}
-          onMouseEnter={(e) => { if(product.stock > 0) (e.currentTarget as HTMLImageElement).style.filter = "grayscale(0%)"; }}
-          onMouseLeave={(e) => { if(product.stock > 0) (e.currentTarget as HTMLImageElement).style.filter = "grayscale(20%)"; }}
+          className={`w-full h-full object-contain transition-all duration-700 ${currentStock === 0 ? 'grayscale' : 'group-hover:scale-110'}`}
+          style={{ filter: currentStock === 0 ? "grayscale(100%) brightness(0.7)" : "grayscale(20%)" }}
+          onMouseEnter={(e) => { if(currentStock && currentStock > 0) (e.currentTarget as HTMLImageElement).style.filter = "grayscale(0%)"; }}
+          onMouseLeave={(e) => { if(currentStock && currentStock > 0) (e.currentTarget as HTMLImageElement).style.filter = "grayscale(20%)"; }}
         />
         <div className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
           style={{ background: "linear-gradient(to top, rgba(23,59,100,0.8) 0%, rgba(23,59,100,0.2) 60%, transparent 100%)" }} />
         
         <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-400 z-10">
           <button
-            onClick={product.stock === 0 ? undefined : handleAdd}
-            disabled={product.stock === 0}
-            className={`relative w-full py-2.5 font-outfit font-semibold text-sm tracking-widest uppercase rounded-lg transition-all duration-500 overflow-hidden shadow-lg ${!added && product.stock > 0 && 'gold-sheen'} ${product.stock === 0 ? 'bg-white/10 text-white/30 cursor-not-allowed border border-white/5' : ''}`}
-            style={{ background: added ? "#22c55e" : "", color: added ? "#fff" : (product.stock === 0 ? "" : "#173B64") }}
+            onClick={currentStock === 0 ? undefined : handleAdd}
+            disabled={currentStock === 0}
+            className={`relative w-full py-2.5 font-outfit font-semibold text-sm tracking-widest uppercase rounded-lg transition-all duration-500 overflow-hidden shadow-lg ${!added && currentStock && currentStock > 0 && 'gold-sheen'} ${currentStock === 0 ? 'bg-white/10 text-white/30 cursor-not-allowed border border-white/5' : ''}`}
+            style={{ background: added ? "#22c55e" : "", color: added ? "#fff" : (currentStock === 0 ? "" : "#173B64") }}
           >
             <AnimatePresence>
               {shimmerActive && !added && (
@@ -108,7 +116,7 @@ export default function ProductCard({ product }: { product: Product }) {
               ) : (
                 <motion.span key="add" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}
                   className="relative z-10">
-                  {product.stock === 0 ? "No disponible" : "Añadir a la Bolsa"}
+                  {currentStock === 0 ? "No disponible" : "Añadir a la Bolsa"}
                 </motion.span>
               )}
             </AnimatePresence>
@@ -117,21 +125,39 @@ export default function ProductCard({ product }: { product: Product }) {
       </div>
 
       <div className="p-5">
-        <h3 className="font-serif text-white group-hover:text-brand-gold text-xl italic mb-1.5 leading-snug transition-colors duration-300">
+        <h3 className="font-serif text-white group-hover:text-brand-gold text-xl italic mb-1 leading-snug transition-colors duration-300">
           {product.name}
         </h3>
-        <p className="text-white/50 font-outfit text-sm leading-relaxed mb-4 line-clamp-2">{product.description}</p>
+        <p className="text-white/50 font-outfit text-xs leading-relaxed mb-4 line-clamp-2">{product.description}</p>
+        
+        {product.category !== "Promociones" && (
+          <div className="flex gap-2 mb-4 bg-white/5 p-1 rounded-lg border border-white/5">
+            <button 
+              onClick={(e) => { e.stopPropagation(); setSelectedSize("5ml"); }}
+              className={`flex-1 py-1.5 rounded-md text-[10px] font-outfit font-bold transition-all ${selectedSize === "5ml" ? 'bg-brand-gold text-black shadow-lg' : 'text-white/40 hover:text-white'}`}
+            >
+              5ML
+            </button>
+            <button 
+              onClick={(e) => { e.stopPropagation(); setSelectedSize("10ml"); }}
+              className={`flex-1 py-1.5 rounded-md text-[10px] font-outfit font-bold transition-all ${selectedSize === "10ml" ? 'bg-brand-gold text-black shadow-lg' : 'text-white/40 hover:text-white'}`}
+            >
+              10ML
+            </button>
+          </div>
+        )}
+
         <div className="flex items-center justify-between">
           <div>
-            <span className="text-white font-serif text-xl font-semibold">${product.price}</span>
+            <span className="text-white font-serif text-xl font-semibold">${currentPrice}</span>
             <span className="text-white/40 font-outfit text-xs ml-1">MXN</span>
           </div>
           <div className="text-right">
-            <p className={`text-[10px] font-outfit uppercase tracking-widest ${product.stock === 0 ? 'text-red-500 font-bold' : 'text-white/30'}`}>
-              {product.stock === 0 ? 'Agotado' : `${product.stock} disponibles`}
+            <p className={`text-[10px] font-outfit uppercase tracking-widest ${currentStock === 0 ? 'text-red-500 font-bold' : 'text-white/30'}`}>
+              {currentStock === 0 ? 'Agotado' : `${currentStock} disp.`}
             </p>
             {inCart && (
-              <span className="text-brand-gold/60 font-outfit text-[10px] bg-brand-gold/10 px-2 py-0.5 rounded-full border border-brand-gold/20 block mt-1 uppercase">
+              <span className="text-brand-gold/60 font-outfit text-[9px] bg-brand-gold/10 px-2 py-0.5 rounded-full border border-brand-gold/20 block mt-1 uppercase">
                 {inCart.quantity} en bolsa
               </span>
             )}
