@@ -16,7 +16,7 @@ export default function WhatsAppFlow() {
     message += "*PRODUCTOS SELECCIONADOS:*\n\n";
     
     items.forEach((item) => {
-      message += `*${item.product.name}* (5ml)\n`;
+      message += `*${item.product.name}* (${item.product.size})\n`;
       message += `   Cantidad: ${item.quantity}\n`;
       message += `   Subtotal: $${item.product.price * item.quantity} MXN\n\n`;
     });
@@ -68,7 +68,7 @@ export default function WhatsAppFlow() {
                         </div>
                         <div className="flex-1">
                             <h3 className="text-white text-base font-serif italic">{item.product.name}</h3>
-                            <p className="text-white/30 text-[10px] uppercase tracking-widest mb-2">Decant 5ml</p>
+                            <p className="text-white/30 text-[10px] uppercase tracking-widest mb-2">{item.product.presentation}</p>
                             <div className="flex items-center justify-between">
                                 <span className="text-white/40 text-xs">{item.quantity} x ${item.product.price}</span>
                                 <span className="text-white font-semibold">${item.product.price * item.quantity}</span>

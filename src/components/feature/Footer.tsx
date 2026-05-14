@@ -15,7 +15,7 @@ export default function Footer() {
               <span className="font-serif text-lg text-white tracking-widest uppercase">MAHETI</span>
             </Link>
             <p className="text-white/40 font-outfit text-sm leading-relaxed mb-6 max-w-sm">
-              Especialistas en decants de alta gama. Prueba las mejores fragancias del mundo en formato de 5ml antes de comprometerte con un frasco completo.
+              Especialistas en decants de alta gama. Prueba las mejores fragancias del mundo en formato de 5ml y 10ml antes de comprometerte con un frasco completo.
             </p>
             <div className="flex gap-4">
               <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/70 hover:border-brand-gold hover:text-brand-gold transition-all duration-300">

@@ -47,7 +47,7 @@ export default function ProductCard({ product }: { product: Product }) {
       className="group relative glass-morphism rounded-xl overflow-hidden transition-all duration-500 cursor-pointer"
     >
       <div className="absolute top-4 left-4 z-10 flex gap-2 flex-wrap">
-        <span className="bg-brand-gold text-black text-xs font-outfit font-bold px-2.5 py-0.5 rounded-full whitespace-nowrap">5ML</span>
+        <span className="bg-brand-gold text-black text-xs font-outfit font-bold px-2.5 py-0.5 rounded-full whitespace-nowrap uppercase">{product.size}</span>
         <span className="bg-white/5 text-white/50 text-xs font-outfit px-2.5 py-0.5 rounded-full backdrop-blur-sm whitespace-nowrap border border-white/5 uppercase tracking-wider">{product.category}</span>
       </div>
       

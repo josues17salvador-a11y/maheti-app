@@ -190,7 +190,7 @@ export default function Navbar() {
                                             </button>
                                         </div>
                                         <p className="text-brand-gold/60 text-[10px] uppercase tracking-widest mb-3">
-                                            5ML · {item.product.category} · <span className={item.product.stock <= 3 ? 'text-red-400 font-bold' : ''}>{item.product.stock} disponibles</span>
+                                            <span className="uppercase">{item.product.size}</span> · {item.product.category} · <span className={item.product.stock <= 3 ? 'text-red-400 font-bold' : ''}>{item.product.stock} disponibles</span>
                                         </p>
                                         <div className="flex items-center justify-between">
                                             <div className="flex items-center gap-3 border border-white/10 rounded px-2 py-1">

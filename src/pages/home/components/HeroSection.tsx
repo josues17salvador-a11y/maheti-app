@@ -49,7 +49,7 @@ export default function HeroSection() {
       <div className="relative z-10 w-full text-center px-6 max-w-5xl mx-auto">
         <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
           className="text-brand-gold font-outfit text-sm tracking-[0.4em] uppercase mb-6">
-          Alta Perfumería · Decants 5ml
+          Alta Perfumería · Decants 5ml y 10ml
         </motion.p>
         <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.4 }}
           className="font-serif text-white text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight italic mb-8">
@@ -61,7 +61,7 @@ export default function HeroSection() {
         <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.8 }}
           className="text-white/70 font-outfit text-base sm:text-lg max-w-xl mx-auto mb-10 leading-relaxed">
           Prueba las fragancias de lujo más icónicas del mundo antes de invertir en el frasco completo.
-          <span className="text-white/40 italic"> 5ml. La esencia del lujo.</span>
+          <span className="text-white/40 italic"> La esencia del lujo en cada gota.</span>
         </motion.p>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.95 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4">

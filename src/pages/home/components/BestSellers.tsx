@@ -19,7 +19,7 @@ export default function BestSellers() {
             <motion.div key={product.id} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: index * 0.15 }}
               className="group relative glass-morphism rounded-xl overflow-hidden transition-all duration-500">
               <div className="absolute top-4 left-4 z-10 flex gap-2">
-                <span className="bg-brand-gold text-black text-xs font-outfit font-semibold px-2 py-0.5 rounded-full">5ML</span>
+                <span className="bg-brand-gold text-black text-xs font-outfit font-semibold px-2 py-0.5 rounded-full uppercase">{product.size}</span>
                 <span className="bg-brand-black/5 text-brand-black/60 text-xs font-outfit px-2 py-0.5 rounded-full backdrop-blur-sm">{product.category}</span>
               </div>
               {product.stock === 0 && (
