@@ -3,13 +3,13 @@ import type { Product } from "../mocks/products";
 
 export interface CartItem {
   product: Product;
-  size: "5ml" | "10ml" | "Combo";
+  size: "3ml" | "5ml" | "10ml" | "Combo";
   quantity: number;
 }
 
 interface CartContextType {
   items: CartItem[];
-  addToCart: (product: Product, size: "5ml" | "10ml" | "Combo") => void;
+  addToCart: (product: Product, size: "3ml" | "5ml" | "10ml" | "Combo") => void;
   removeFromCart: (productId: number, size: string) => void;
   updateQuantity: (productId: number, size: string, quantity: number) => void;
   clearCart: () => void;
@@ -22,10 +22,10 @@ const CartContext = createContext<CartContextType | null>(null);
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
 
-  const addToCart = useCallback((product: Product, size: "5ml" | "10ml" | "Combo") => {
+  const addToCart = useCallback((product: Product, size: "3ml" | "5ml" | "10ml" | "Combo") => {
     setItems((prev) => {
       const existing = prev.find((i) => i.product.id === product.id && i.size === size);
-      const stock = size === "10ml" ? (product.stock10ml || 0) : size === "5ml" ? (product.stock5ml || 0) : (product.stock || 0);
+      const stock = size === "10ml" ? (product.stock10ml || 0) : size === "5ml" ? (product.stock5ml || 0) : size === "3ml" ? (product.stock3ml || 0) : (product.stock || 0);
       
       if (existing) {
         if (existing.quantity >= stock) return prev;
@@ -47,7 +47,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     }
     setItems((prev) => prev.map((i) => {
       if (i.product.id === productId && i.size === size) {
-        const stock = size === "10ml" ? (i.product.stock10ml || 0) : size === "5ml" ? (i.product.stock5ml || 0) : (i.product.stock || 0);
+        const stock = size === "10ml" ? (i.product.stock10ml || 0) : size === "5ml" ? (i.product.stock5ml || 0) : size === "3ml" ? (i.product.stock3ml || 0) : (i.product.stock || 0);
         return { ...i, quantity: Math.min(quantity, stock) };
       }
       return i;
@@ -58,7 +58,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   const totalItems = items.reduce((sum, i) => sum + i.quantity, 0);
   const totalPrice = items.reduce((sum, i) => {
-    const price = i.size === "10ml" ? (i.product.price10ml || 0) : i.size === "5ml" ? (i.product.price5ml || 0) : (i.product.price || 0);
+    const price = i.size === "10ml" ? (i.product.price10ml || 0) : i.size === "5ml" ? (i.product.price5ml || 0) : i.size === "3ml" ? (i.product.price3ml || 0) : (i.product.price || 0);
     return sum + price * i.quantity;
   }, 0);
 

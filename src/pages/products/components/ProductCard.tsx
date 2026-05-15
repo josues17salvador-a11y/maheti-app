@@ -7,15 +7,15 @@ export default function ProductCard({ product }: { product: Product }) {
   const { addToCart, items } = useCart();
   const [added, setAdded] = useState(false);
   const [shimmerActive, setShimmerActive] = useState(false);
-  const [selectedSize, setSelectedSize] = useState<"5ml" | "10ml" | "Combo">(
-    product.category === "Promociones" ? "Combo" : "5ml"
+  const [selectedSize, setSelectedSize] = useState<"3ml" | "5ml" | "10ml" | "Combo">(
+    product.category === "Promociones" ? "Combo" : "3ml"
   );
   
   const shimmerTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const shimmerInterval = useRef<ReturnType<typeof setInterval> | null>(null);
   
-  const currentPrice = selectedSize === "10ml" ? product.price10ml : selectedSize === "5ml" ? product.price5ml : product.price;
-  const currentStock = selectedSize === "10ml" ? product.stock10ml : selectedSize === "5ml" ? product.stock5ml : product.stock;
+  const currentPrice = selectedSize === "10ml" ? product.price10ml : selectedSize === "5ml" ? product.price5ml : selectedSize === "3ml" ? product.price3ml : product.price;
+  const currentStock = selectedSize === "10ml" ? product.stock10ml : selectedSize === "5ml" ? product.stock5ml : selectedSize === "3ml" ? product.stock3ml : product.stock;
   const inCart = items.find((i) => i.product.id === product.id && i.size === selectedSize);
 
   useEffect(() => {
@@ -132,6 +132,12 @@ export default function ProductCard({ product }: { product: Product }) {
         
         {product.category !== "Promociones" && (
           <div className="flex gap-2 mb-4 bg-white/5 p-1 rounded-lg border border-white/5">
+            <button 
+              onClick={(e) => { e.stopPropagation(); setSelectedSize("3ml"); }}
+              className={`flex-1 py-1.5 rounded-md text-[10px] font-outfit font-bold transition-all ${selectedSize === "3ml" ? 'bg-brand-gold text-black shadow-lg' : 'text-white/40 hover:text-white'}`}
+            >
+              3ML
+            </button>
             <button 
               onClick={(e) => { e.stopPropagation(); setSelectedSize("5ml"); }}
               className={`flex-1 py-1.5 rounded-md text-[10px] font-outfit font-bold transition-all ${selectedSize === "5ml" ? 'bg-brand-gold text-black shadow-lg' : 'text-white/40 hover:text-white'}`}

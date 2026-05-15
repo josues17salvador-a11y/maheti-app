@@ -34,7 +34,7 @@ export default function ProductsPage() {
         <div className="relative z-10 max-w-7xl mx-auto">
           <p className="text-brand-gold font-outfit text-xs tracking-[0.4em] uppercase mb-3">MAHETI · Fragancias</p>
           <h1 className="font-serif text-white text-4xl sm:text-5xl italic mb-4">Catálogo Completo</h1>
-          <p className="text-white/40 font-outfit text-sm max-w-md">Todos nuestros decants de 5ml y 10ml, listos para descubrir. Prueba antes de invertir.</p>
+          <p className="text-white/40 font-outfit text-sm max-w-md">Todos nuestros decants de 3ml, 5ml y 10ml, listos para descubrir. Prueba antes de invertir.</p>
         </div>
       </section>
 

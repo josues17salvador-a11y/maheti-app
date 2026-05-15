@@ -26,8 +26,10 @@ export interface Product {
   image: string;
   isBestSeller?: boolean;
   // Para perfumes individuales
+  price3ml?: number;
   price5ml?: number;
   price10ml?: number;
+  stock3ml?: number;
   stock5ml?: number;
   stock10ml?: number;
   // Para promociones/combos
@@ -40,8 +42,10 @@ export const products: Product[] = [
   {
     id: 1,
     name: "Mandarin Sky",
+    price3ml: 60,
     price5ml: 90,
-    price10ml: 180,
+    price10ml: 170,
+    stock3ml: 15,
     stock5ml: 15,
     stock10ml: 10,
     description: "Frescura cítrica con mandarina jugosa y un toque amaderado.",
@@ -52,8 +56,10 @@ export const products: Product[] = [
   {
     id: 2,
     name: "Nautica Voyage",
+    price3ml: 35,
     price5ml: 45,
-    price10ml: 90,
+    price10ml: 80,
+    stock3ml: 10,
     stock5ml: 10,
     stock10ml: 5,
     description: "Acuático y limpio, con manzana verde y notas marinas.",
@@ -64,8 +70,10 @@ export const products: Product[] = [
   {
     id: 3,
     name: "Bharara King",
+    price3ml: 75,
     price5ml: 110,
-    price10ml: 220,
+    price10ml: 205,
+    stock3ml: 4,
     stock5ml: 4,
     stock10ml: 2,
     description: "Dulce y especiado, con cítricos brillantes y fondo de vainilla.",
@@ -76,8 +84,10 @@ export const products: Product[] = [
   {
     id: 4,
     name: "Khamrah Qahwa",
+    price3ml: 60,
     price5ml: 90,
-    price10ml: 180,
+    price10ml: 170,
+    stock3ml: 15,
     stock5ml: 15,
     stock10ml: 8,
     description: "Café intenso con especias cálidas y vainilla cremosa.",
@@ -85,21 +95,12 @@ export const products: Product[] = [
     image: khamrahQahwaImg,
   },
   {
-    id: 5,
-    name: "Tommy (Hilfiger)",
-    price5ml: 60,
-    price10ml: 120,
-    stock5ml: 0,
-    stock10ml: 0,
-    description: "Clásico fresco, mezcla de cítricos, lavanda y notas verdes.",
-    category: "Cítrico",
-    image: tommyImg,
-  },
-  {
     id: 6,
     name: "Versace Eros",
+    price3ml: 85,
     price5ml: 120,
-    price10ml: 240,
+    price10ml: 225,
+    stock3ml: 10,
     stock5ml: 10,
     stock10ml: 5,
     description: "Menta vibrante, manzana verde y vainilla seductora.",
@@ -109,8 +110,10 @@ export const products: Product[] = [
   {
     id: 7,
     name: "9PM (Afnan)",
+    price3ml: 60,
     price5ml: 90,
-    price10ml: 180,
+    price10ml: 170,
+    stock3ml: 4,
     stock5ml: 4,
     stock10ml: 2,
     description: "Manzana y canela sobre un fondo cálido de vainilla y ámbar.",
@@ -120,8 +123,10 @@ export const products: Product[] = [
   {
     id: 8,
     name: "JPG Paradise Garden",
+    price3ml: 105,
     price5ml: 160,
-    price10ml: 320,
+    price10ml: 305,
+    stock3ml: 4,
     stock5ml: 4,
     stock10ml: 2,
     description: "Una explosión tropical y exótica con notas verdes y acuáticas.",
@@ -132,8 +137,10 @@ export const products: Product[] = [
   {
     id: 9,
     name: "Dylan Blue (Versace)",
+    price3ml: 80,
     price5ml: 110,
-    price10ml: 220,
+    price10ml: 210,
+    stock3ml: 10,
     stock5ml: 10,
     stock10ml: 5,
     description: "Carácter mediterráneo con fuertes notas cítricas y ambroxan.",
@@ -143,8 +150,10 @@ export const products: Product[] = [
   {
     id: 10,
     name: "JPG Le Beau Le Parfum",
+    price3ml: 120,
     price5ml: 170,
-    price10ml: 340,
+    price10ml: 350,
+    stock3ml: 8,
     stock5ml: 8,
     stock10ml: 4,
     description: "Intensidad adictiva con coco, haba tonka y madera de sándalo.",
@@ -155,8 +164,10 @@ export const products: Product[] = [
   {
     id: 11,
     name: "Odyssey Aqua",
+    price3ml: 60,
     price5ml: 90,
-    price10ml: 180,
+    price10ml: 170,
+    stock3ml: 12,
     stock5ml: 12,
     stock10ml: 6,
     description: "Fragancia acuática y fresca con una salida cítrica vibrante y un fondo limpio.",
@@ -166,8 +177,10 @@ export const products: Product[] = [
   {
     id: 12,
     name: "Hawas Ice (Rasasi)",
+    price3ml: 75,
     price5ml: 110,
-    price10ml: 220,
+    price10ml: 205,
+    stock3ml: 10,
     stock5ml: 10,
     stock10ml: 5,
     description: "Frescura helada con notas cítricas, manzana y un fondo acuático revitalizante.",
@@ -178,8 +191,10 @@ export const products: Product[] = [
   {
     id: 13,
     name: "Valentino Coral Fantasy",
+    price3ml: 160,
     price5ml: 230,
-    price10ml: 460,
+    price10ml: 445,
+    stock3ml: 8,
     stock5ml: 8,
     stock10ml: 3,
     description: "Una fragancia vibrante con notas de manzana roja, tabaco y un fondo de pachulí elegante.",
@@ -190,8 +205,10 @@ export const products: Product[] = [
   {
     id: 14,
     name: "ARI by Ariana Grande",
+    price3ml: 65,
     price5ml: 95,
-    price10ml: 190,
+    price10ml: 170,
+    stock3ml: 10,
     stock5ml: 10,
     stock10ml: 5,
     description: "Una fragancia deliciosa con notas de pera, frambuesa y un toque dulce de malvavisco.",
