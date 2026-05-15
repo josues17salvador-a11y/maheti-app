@@ -16,7 +16,7 @@ export default function WhatsAppFlow() {
     message += "*PRODUCTOS SELECCIONADOS:*\n\n";
     
     items.forEach((item) => {
-      const price = item.size === "10ml" ? (item.product.price10ml || 0) : item.size === "5ml" ? (item.product.price5ml || 0) : (item.product.price || 0);
+      const price = item.size === "10ml" ? (item.product.price10ml || 0) : item.size === "5ml" ? (item.product.price5ml || 0) : item.size === "3ml" ? (item.product.price3ml || 0) : (item.product.price || 0);
       message += `*${item.product.name}* (${item.size})\n`;
       message += `   Cantidad: ${item.quantity}\n`;
       message += `   Subtotal: $${price * item.quantity} MXN\n\n`;
@@ -63,7 +63,7 @@ export default function WhatsAppFlow() {
             <h2 className="text-white font-serif text-2xl italic mb-6">Resumen de Pedido</h2>
             <div className="space-y-6 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
                 {items.map((item) => {
-                    const price = item.size === "10ml" ? (item.product.price10ml || 0) : item.size === "5ml" ? (item.product.price5ml || 0) : (item.product.price || 0);
+                    const price = item.size === "10ml" ? (item.product.price10ml || 0) : item.size === "5ml" ? (item.product.price5ml || 0) : item.size === "3ml" ? (item.product.price3ml || 0) : (item.product.price || 0);
                     return (
                         <div key={`${item.product.id}-${item.size}`} className="flex gap-4">
                             <div className="w-16 h-20 rounded bg-brand-bg flex-shrink-0 overflow-hidden">

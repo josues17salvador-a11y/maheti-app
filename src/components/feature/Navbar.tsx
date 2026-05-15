@@ -178,8 +178,8 @@ export default function Navbar() {
                             </div>
                         ) : (
                             items.map((item) => {
-                                const price = item.size === "10ml" ? (item.product.price10ml || 0) : item.size === "5ml" ? (item.product.price5ml || 0) : (item.product.price || 0);
-                                const stock = item.size === "10ml" ? (item.product.stock10ml || 0) : item.size === "5ml" ? (item.product.stock5ml || 0) : (item.product.stock || 0);
+                                const price = item.size === "10ml" ? (item.product.price10ml || 0) : item.size === "5ml" ? (item.product.price5ml || 0) : item.size === "3ml" ? (item.product.price3ml || 0) : (item.product.price || 0);
+                                const stock = item.size === "10ml" ? (item.product.stock10ml || 0) : item.size === "5ml" ? (item.product.stock5ml || 0) : item.size === "3ml" ? (item.product.stock3ml || 0) : (item.product.stock || 0);
                                 
                                 return (
                                     <div key={`${item.product.id}-${item.size}`} className="flex gap-4 group">
